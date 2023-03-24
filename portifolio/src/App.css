@@ -1,16 +1,25 @@
-.App {
+/* .App {
   text-align: center;
-}
+} */
 
-.separador {
+/* .separador {
   width: 100%;
   height: 10%;
-  /* border: black solid; */
-}
+  border: black solid;
+} */
 
-.menu-lateral {
+/* .faixa-lateral {
+  background-color: black;
+  height: max-content;
+  align-items: center;
+  display: flex;
+  flex-wrap: inherit;
+  justify-content: space-between;
+} */
+
+/* .menu-lateral {
   width: 200px;
-  height: 350px;
+  min-height: 100%;
   border: black solid 2px;
   border-radius: 9px;
   background-color: rgba(0, 0, 0, 0.7);
@@ -20,20 +29,20 @@
   align-items: center;
   padding: 20px;
   padding-top: 2%;
-}
+} */
 
-.itemMenuLateral {
+/* .itemMenuLateral {
   padding: 7px;
-}
+} */
 
-.center {
+/* .center {
   width: 100%;
   height: 50%;
   display: flex;
   flex-direction: row;
   align-items: center;
-  /* border: black solid 1px; */
-}
+  border: black solid 1px;
+} */
 
 .about-me {
   text-align: center;
@@ -63,12 +72,12 @@
   /* padding: 7px; */
 }
 
-.central-card {
+/* .central-card {
   width: 80%;
   height: 90%;
   padding-left: 25%;
-  /* border: black solid 1px; */
-}
+  border: black solid 1px;
+} */
 
 .welcome {
   padding-top: 10%;

@@ -11,10 +11,6 @@ function App() {
     <BrowserRouter>
       <Switch>
         <Route path="/" component={Home}/>
-        {/* <Route path="/aboutme" component={AboutMe}/>
-        <Route path="/education" component={Education}/>
-        <Route path="/contacts" component={Contacts}/>
-        <Route path="/aboutme" component={AboutMe}/> */}
       </Switch>
     </BrowserRouter>
   );
