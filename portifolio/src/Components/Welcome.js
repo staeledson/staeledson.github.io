@@ -4,8 +4,8 @@ export default class Welcome extends React.Component {
   render(){
     return(
       <div className='welcome'>
-        <h1>Olá, sou Stael Edson</h1>
-        <h2>Seja bem vindo à minha página.</h2>
+        <p>Olá, sou Stael Edson.</p>
+        <p className='welcome-itens'>Seja bem vindo(a) à minha página.</p>
       </div>
     );
   }

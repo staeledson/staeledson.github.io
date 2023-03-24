@@ -5,28 +5,6 @@
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
 }
 
-/* body {
-  min-height: 100vh;
-  background-color: black;
-  background-image: url("../public/background1.jpg");
-  background-position: center top;
-  background-repeat: no-repeat;
-  background-size: cover;
-  border: black solid 7px;
-  display: flex;
-} */
-
-#root {
-  min-height: 100vh;
-  background-color: rgba(0, 0, 0, 0.6);
-  background-image: url("../public/background1.jpg");
-  background-position: center top;
-  background-repeat: no-repeat;
-  background-size: cover;
-  border: black solid 7px;
-  display: flex;
-}
-
 .backImg {
   width: 100%;
   height: 100%;
@@ -34,11 +12,29 @@
   opacity: 90%;
 }
 
+/* body {
+  display: flex;
+  flex-direction: column;
+} */
+
+#root {
+  min-height: 100vh;
+  width: 100%;
+  background-image: url("../public/background1.jpg");
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: rgba(0, 0, 0, 0.6);
+  border: black solid 7px;
+  display: flex;
+}
+
 .faixa-lateral {
   background-color: rgba(0, 0, 0, 0.7);
+  background-size: cover;
   color: rgba(255, 255, 255, 0.878);
-  min-width: 140px;
-  height: 100hv;
+  width: 25vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -48,11 +44,12 @@
 .menu-lateral {
   height: 100%;
   width: 100%;
-  padding-top: 100%;
+  padding-top: 80%;
   display: flex;
   flex-direction: column;
   align-items: center;
   font-style: italic;
+  border: yellow solid 2px;
 }
 
 .itemMenuLateral {
@@ -60,18 +57,6 @@
   cursor: default;
   padding: 7px;
 }
-
-/* .faixa-header {
-  top: 0;
-  left: 0;
-  position: absolute;
-  background-color: rgba(0, 0, 0, 0.157);
-  width: 10%;
-  padding: 1%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-} */
 
 .minha-foto {
   background-image: url("../public/minha_foto.jpeg");
@@ -83,31 +68,11 @@
   margin-top: 50px;
 }
 
-/* .home {
+.central-card {
+  background-color: rgba(0, 0, 0, 0.14);
   width: 100%;
-  height: 100%;
-} */
-
-/* .portifolioName {
-  font-size: xx-large;
-} */
-
-/* .content {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
+  height: 100vh;
   display: flex;
-  flex-direction: column;
-  justify-content: top;
   align-items: center;
+  border: purple solid 3px;
 }
-
-.overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.1);
-} */

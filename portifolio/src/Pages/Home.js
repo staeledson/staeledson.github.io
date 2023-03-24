@@ -11,17 +11,12 @@ import MenuLateral from '../Components/MenuLateral';
           <>
             <div className='faixa-lateral'>
               <div>
-                <div>
-                  <div className='minha-foto'>
-                  </div>
-                  <p>Stael Edson</p>
-                </div>
-                <MenuLateral/>
+                <div className='minha-foto'/>
+                <p>Stael Edson</p>
               </div>
+              <MenuLateral/>
             </div>
-            <div>
             <CardCentral/>
-            </div>
           </>
         );
       };
