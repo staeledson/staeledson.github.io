@@ -1,0 +1,78 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+}
+
+.backImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 90%;
+}
+
+/* body {
+  display: flex;
+  flex-direction: column;
+} */
+
+#root {
+  min-height: 100vh;
+  width: 100%;
+  background-image: url("../public/background1.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  /* border: black solid 7px; */
+}
+
+.faixa-lateral {
+  background-color: rgba(0, 0, 0, 0.7);
+  background-size: cover;
+  color: rgba(255, 255, 255, 0.878);
+  width: 25vh;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.menu-lateral {
+  height: 100%;
+  width: 100%;
+  padding-top: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-style: italic;
+  /* border: yellow solid 2px; */
+}
+
+.itemMenuLateral {
+  list-style-type: none;
+  cursor: default;
+  padding: 7px;
+}
+
+.minha-foto {
+  background-image: url("../public/minha_foto.jpeg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  height: 100px;
+  width: 100px;
+  border-radius: 50px;
+  margin-top: 50px;
+}
+
+.central-card {
+  background-color: rgba(0, 0, 0, 0.1);
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  /* border: purple solid 3px; */
+}
