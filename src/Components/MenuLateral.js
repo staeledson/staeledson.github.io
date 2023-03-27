@@ -16,7 +16,7 @@ export default function MenuLateral() {
         <ul>
           <li id='home' onClick={(event)=> setandoClicado(event)} className='itemMenuLateral' alt='home'>Home</li>
           <li id='aboutme' onClick={(event)=> setandoClicado(event)} className='itemMenuLateral'>Sobre Mim</li>
-          {/* <li id='learned' onClick={(event)=> setandoClicado(event)} className='itemMenuLateral'>Linguagens</li> */}
+          <li id='learned' onClick={(event)=> setandoClicado(event)} className='itemMenuLateral'>Linguagens/Ferramentas</li>
           {/* <li id='home' onClick={(event)=> setandoClicado(event)} className='itemMenuLateral'>Ferramentas</li> */}
           <li id='education' onClick={(event)=> setandoClicado(event)} className='itemMenuLateral'>Formação</li>
           <li id='projects' onClick={(event)=> setandoClicado(event)} className='itemMenuLateral'>Projetos</li>

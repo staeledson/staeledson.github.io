@@ -3,6 +3,7 @@ import ContextApp from "../context/ContextApp";
 import AboutMe from "./AboutMe";
 import Contacts from "./Contacts";
 import Education from "./Education";
+import Learned from "./Learned";
 import Projects from "./Projects";
 import Welcome from "./Welcome";
 
@@ -15,6 +16,7 @@ export default function CardCentral (){
        { usedCard === 'home' && <Welcome/> }
        { usedCard === 'aboutme' && <AboutMe/> }
        { usedCard === 'contacts' && <Contacts/> }
+       { usedCard === 'learned' && <Learned/> }
        { usedCard === 'projects' && <Projects/> }
        { usedCard === 'education' && <Education/> }
      </div>
