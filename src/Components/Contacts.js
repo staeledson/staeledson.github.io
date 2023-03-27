@@ -1,4 +1,5 @@
 import React from 'react';
+import { emailIcon, githubIcon, linkedinIcon, phoneIcon, wppIcon } from '../utils/icons';
 
 export default class Contacts extends React.Component {
   
@@ -7,18 +8,18 @@ export default class Contacts extends React.Component {
     return(
       <div className='contatos-card'>
         <h2>Entre em contato:</h2>
-        <h5 className='contatos-itens'>Email: edsonstael@gmail.com</h5>
-        <h5 className='contatos-itens'>Telefone: (85) 992641804</h5>
+        <h5 className='contatos-itens'>{emailIcon} edsonstael@gmail.com</h5>
+        <h5 className='contatos-itens'>{phoneIcon} (85) 992641804</h5>
         
-        <h5 className='contatos-itens'>Linkedin:  
-          <a href='https://www.linkedin.com/in/staeledson/' target='_blank' rel="noreferrer"> www.linkedin.com/in/staeledson</a>
+        <h5 className='contatos-itens'>{linkedinIcon} 
+          <a href='https://www.linkedin.com/in/staeledson/' target='_blank' rel="noreferrer"> linkedin.com/in/staeledson</a>
         </h5>
         
-        <h5 className='contatos-itens'>Github:  
-          <a href='https://github.com/staeledson' target='_blank' rel="noreferrer"> https://github.com/staeledson</a>
+        <h5 className='contatos-itens'>{githubIcon}
+          <a href='https://github.com/staeledson' target='_blank' rel="noreferrer"> github.com/staeledson</a>
         </h5>
 
-        <h5 className='contatos-itens'>Wpp:  
+        <h5 className='contatos-itens'>{wppIcon} 
           <a href={linkWpp} target='_blank' rel="noreferrer"> Whatsapp</a>
         </h5>
       </div>
