@@ -7,26 +7,20 @@ import Learned from "./Learned";
 import Projects from "./Projects";
 import Welcome from "./Welcome";
 
-export default function CardCentral (){
-
+export default function CardCentral() {
   const { usedCard } = useContext(ContextApp);
 
-  return(
-     <div className="central-card">
-       { usedCard === 'home' && <Welcome/> }
-       { usedCard === 'aboutme' && <AboutMe/> }
-       { usedCard === 'contacts' && <Contacts/> }
-       { usedCard === 'learned' && <Learned/> }
-       { usedCard === 'projects' && <Projects/> }
-       { usedCard === 'education' && <Education/> }
-     </div>
-   );
+  return (
+    <div className="central-card">
+      {usedCard === "home" && <Welcome />}
+      {usedCard === "aboutme" && <AboutMe />}
+      {usedCard === "contacts" && <Contacts />}
+      {usedCard === "learned" && <Learned />}
+      {usedCard === "projects" && <Projects />}
+      {usedCard === "education" && <Education />}
+    </div>
+  );
 }
-
-
-
-
-
 
 // class CardCentral extends React.Component{
 
@@ -40,13 +34,13 @@ export default function CardCentral (){
 //   componentDidMount() {
 //     this.setState({pathAtual: 'aboutme'});
 //   }
-  
+
 //   // getPathName = () => {
 //   //   this.setState({ pathAtual: 'aboutme' })
 //   // };
-  
+
 //   render() {
-//     const {pathAtual} = this.state;    
+//     const {pathAtual} = this.state;
 //     return(
 //       <div className="central-card">
 //         { pathAtual === 'aboutme' && <AboutMe/> }
