@@ -3,9 +3,9 @@ import React from "react";
 export default class AboutMe extends React.Component {
   render() {
     return (
-      <div className="flex-col justify-between m-auto">
-        <div>
-          <p className="text-2xl mb-10   w-9/12 text-center m-auto">
+      <section id="about-me" className="h-screen m-auto">
+        <div className="mt-48">
+          <p className="w-9/12 m-auto mb-10 text-4xl text-center font-poppins ">
             Natural de Fortaleza-CE, sou Desenvolvedor Web Full Stack formado na
             <a
               href="https://www.betrybe.com/formacao-desenvolvimento-web"
@@ -18,7 +18,7 @@ export default class AboutMe extends React.Component {
           </p>
         </div>
         <div>
-          <p className="text-xl my-10 w-8/12 text-center m-auto">
+          <p className="w-8/12 m-auto mt-3 mb-10 text-2xl text-center font-poppins">
             Atualmente, presto serviços de desenvolvimento web e mobile, para as
             empresas
             <a
@@ -40,7 +40,7 @@ export default class AboutMe extends React.Component {
             </a>
           </p>
         </div>
-      </div>
+      </section>
     );
   }
 }

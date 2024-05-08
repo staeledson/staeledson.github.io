@@ -11,12 +11,12 @@ export default function MenuLateral() {
   };
 
   return (
-    <div className="">
+    <div className="mt-16">
       <div>
-        <div className="minha-foto mt-8" />
-        <p className="text-gray-300 text-md my-1">Stael Edson</p>
+        <div className="mt-8 minha-foto" />
+        <p className="my-1 text-gray-300 text-md">Stael Edson</p>
       </div>
-      <div className="menu-latera text-gray-300 text-xl my-14">
+      <div className="text-xl text-gray-300 menu-latera my-14">
         <ul>
           <li
             id="home"

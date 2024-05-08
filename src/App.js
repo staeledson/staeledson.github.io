@@ -1,16 +1,17 @@
-import React from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import './App.css';
-// import AboutMe from './Components/AboutMe';
-// import Contacts from './Components/Contacts';
-// import Education from './Components/Education';
-import Home from './Pages/Home';
+import React from "react";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+import "./App.css";
+import Home from "./Pages/Home";
+<link
+  href="https://fonts.googleapis.com/css?family=Poppins"
+  rel="stylesheet"
+></link>;
 
 function App() {
   return (
     <BrowserRouter>
       <Switch>
-        <Route path="/" component={Home}/>
+        <Route path="/" component={Home} />
       </Switch>
     </BrowserRouter>
   );
