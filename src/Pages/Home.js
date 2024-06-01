@@ -10,10 +10,10 @@ class Home extends React.Component {
     return (
       <>
         <div className="flex w-full">
-          <div className="flex-col px-2 text-center bg-slate-900 opacity-90">
+          <div className="flex-col px-3 text-center bg-slate-900 bg-opacity-90">
             <MenuLateral />
           </div>
-          <div className="flex w-11/12 m-auto bg-opacity-30 bg-slate-900">
+          <div className="flex w-11/12 m-auto bg-opacity-10 bg-slate-900">
             <CardCentral />
           </div>
         </div>

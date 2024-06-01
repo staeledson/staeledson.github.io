@@ -15,7 +15,7 @@ export default class Education extends React.Component {
           </a>
         </p>
 
-        <p className="w-9/12 m-auto mt-16 text-lg font-poppins">
+        <p className="w-9/12 m-auto mt-16 text-xl font-poppins">
           A
           <a
             href="https://www.betrybe.com/formacao-desenvolvimento-web"
@@ -30,7 +30,7 @@ export default class Education extends React.Component {
           Compartilhado, quem estuda na Trybe tem a opção de pagar apenas quando
           já estiver trabalhando.
         </p>
-        <p className="w-9/12 m-auto mt-16 text-lg font-poppins">
+        <p className="w-9/12 m-auto mt-16 text-xl font-poppins">
           São mais de 1500 horas de formação que aborda fundamentos de
           desenvolvimento web, desenvolvimento, Front-end, Back-end, ciência da
           computação, metodologias ágeis e habilidades comportamentais.

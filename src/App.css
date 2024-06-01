@@ -77,6 +77,10 @@ a {
 }
 
 .learned-itens {
+  height: 45px;
+  display: flex;
+  margin: auto;
+  margin-top: 20px;
   /* margin-top: 4%;
   margin-left: 4%;
   margin-bottom: 2%; */

@@ -7,7 +7,7 @@ module.exports = {
         poppins: ["Poppins", "sans-serif"],
       },
       backgroundImage: {
-        "site-igep": "url('/public/site-igepsaude.png')",
+        "site-igep": "url('/src/images/background1.jpg')",
       },
     },
   },
