@@ -8,19 +8,19 @@ defineProps({
 const projects = ref([
   {
     name: "Site IGEP Saúde - Instituto de Gestão, Estudos e Pesquisa em Saúde",
-    image: "/public/print-site-igep.png",
+    image: "/print-site-igep.png",
     description:
       "Desenvolvimento completo de website institucional para o IGEP Saúde, desde a concepção inicial até o deploy final. Utilizando o framework VueJS, criei uma plataforma moderna, responsiva e de fácil navegação, com foco na apresentação clara dos serviços e pesquisas da instituição. Fui responsável por todo o ciclo de vida do projeto, incluindo design, implementação e otimização.",
   },
   {
     name: "Site Grupo Pluralmed - Gestão Médica e Inovação em Saúde",
-    image: "/public/print-site-plural.png",
+    image: "/print-site-plural.png",
     description:
       "Trabalhei na implementação de diversas melhorias no site institucional do Grupo Pluralmed. Entre as principais contribuições, implementei o AlpineJS para otimizar a interatividade da interface e integrar funcionalidades dinâmicas de forma simples e eficiente. Uma das funcionalidades mais notáveis foi o desenvolvimento de uma aba de notícias, que permite à equipe do Grupo Pluralmed cadastrar e atualizar as notícias diretamente no software da empresa, por meio de uma integração personalizada com a API. Essa melhoria trouxe mais agilidade e autonomia para a gestão de conteúdo do site.",
   },
   {
     name: "Vituz - Sistema SaaS de Gestão de Saúde",
-    image: "/public/print-vituz.png",
+    image: "/print-vituz.png",
     description:
       "Desde 2023, venho contribuindo no desenvolvimento e aprimoramento do Vituz, um sistema SaaS completo voltado para a gestão de saúde pública. O sistema abrange diversos módulos essenciais, como gestão de escalas médicas, estoques de almoxarifados e farmácias, emergência hospitalar, ambulatório, regulação, atenção básica e atenção especializada.",
   },
