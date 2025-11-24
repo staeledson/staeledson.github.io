@@ -11,29 +11,40 @@ const projects = ref([
     image: "/print-site-igep.png",
     description:
       "Desenvolvimento completo de website institucional para o IGEP Saúde, desde a concepção inicial até o deploy final. Utilizando o framework VueJS, criei uma plataforma moderna, responsiva e de fácil navegação, com foco na apresentação clara dos serviços e pesquisas da instituição. Fui responsável por todo o ciclo de vida do projeto, incluindo design, implementação e otimização.",
+    link: "https://igepsaude.com.br",
   },
   {
     name: "Site Grupo Pluralmed - Gestão Médica e Inovação em Saúde",
     image: "/print-site-plural.png",
     description:
       "Trabalhei na implementação de diversas melhorias no site institucional do Grupo Pluralmed. Entre as principais contribuições, implementei o AlpineJS para otimizar a interatividade da interface e integrar funcionalidades dinâmicas de forma simples e eficiente. Uma das funcionalidades mais notáveis foi o desenvolvimento de uma aba de notícias, que permite à equipe do Grupo Pluralmed cadastrar e atualizar as notícias diretamente no software da empresa, por meio de uma integração personalizada com a API. Essa melhoria trouxe mais agilidade e autonomia para a gestão de conteúdo do site.",
+    link: "https://grupoplural.com.br",
   },
   {
     name: "Vituz - Sistema SaaS de Gestão de Saúde",
     image: "/print-vituz.png",
     description:
       "Desde 2023, venho contribuindo no desenvolvimento e aprimoramento do Vituz, um sistema SaaS completo voltado para a gestão de saúde pública. O sistema abrange diversos módulos essenciais, como gestão de escalas médicas, estoques de almoxarifados e farmácias, emergência hospitalar, ambulatório, regulação, atenção básica e atenção especializada.",
+    link: "https://vituz.com.br",
   },
 ]);
 
+const isTransitioning = ref(false);
+
 const next = () => {
-  const firstProject = projects.value.shift(); // Remove o primeiro item
-  projects.value.push(firstProject); // Adiciona o item removido ao final do array
+  if (isTransitioning.value) return;
+  isTransitioning.value = true;
+  const firstProject = projects.value.shift();
+  projects.value.push(firstProject);
+  setTimeout(() => (isTransitioning.value = false), 300);
 };
 
 const prev = () => {
-  const lastProject = projects.value.pop(); // Remove o último item
-  projects.value.unshift(lastProject); // Adiciona o item removido ao início do array
+  if (isTransitioning.value) return;
+  isTransitioning.value = true;
+  const lastProject = projects.value.pop();
+  projects.value.unshift(lastProject);
+  setTimeout(() => (isTransitioning.value = false), 300);
 };
 
 // Alternância automática
