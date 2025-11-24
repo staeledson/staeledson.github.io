@@ -9,17 +9,19 @@ import Skills from "./components/Skills.vue";
 </script>
 
 <template>
-  <div class="flex flex-col h-[2000px]">
-    <NavBar class="bg-gray-950" />
-    <Home id="home" class="mt-16 w-[85%] mx-auto"/>
-    <AboutMe id="about_me" class="mt-14 w-[60%] flex text-start justify-end ml-[35%]"/>
-    <Skills id="skills" class="mt-36 w-[85%] flex text-start justify-start mx-auto"/>
-    <MyProjects id="projects" class="mt-36 w-[85%] flex text-start justify-start mx-auto"/>
-    <Contacts id="contacts" class="mt-36 w-[85%] flex text-start justify-start mx-auto"/>
-    <Footer id="footer" class="mt-28 w-[85%] flex text-start justify-start mx-auto"/>
+  <div class="flex flex-col min-h-screen bg-slate-900">
+    <NavBar />
+    <main
+      class="flex-grow w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-24 pb-24"
+    >
+      <Home id="home" class="pt-24" />
+      <AboutMe id="about_me" />
+      <Skills id="skills" />
+      <MyProjects id="projects" />
+      <Contacts id="contacts" />
+    </main>
+    <Footer id="footer" />
   </div>
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>

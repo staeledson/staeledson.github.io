@@ -1,122 +1,64 @@
-<script setup>
-import { ref } from "vue";
-
-const name = ref("");
-const email = ref("");
-const message = ref("");
-const whatsappMessage = ref("");
-
-const handleSubmit = () => {
-  const mailtoLink = `mailto:edsonstael@gmail.com?subject=Contato de ${
-    name.value
-  }&body=${encodeURIComponent(
-    `Email: ${email.value}\n\nMensagem:\n${message.value}`
-  )}`;
-  window.location.href = mailtoLink;
-
-  const whatsappLink = `https://wa.me/5585992641804?text=${encodeURIComponent(
-    `Nome: ${name.value}\nEmail: ${email.value}\nMensagem: ${message.value}`
-  )}`;
-  window.open(whatsappLink, "_blank");
-};
-
-const submitWppMessage = (message) => {
-  const whatsappLink = `https://wa.me/5585992641804?text=${encodeURIComponent(
-    message
-  )}`;
-  window.open(whatsappLink, "_blank");
-};
-</script>
+<script setup></script>
 
 <template>
-  <div class="flex flex-col">
-    <div class="">
-      <p class="text-[60px]">Contatos</p>
-    </div>
-    <div class="flex justify-center p-5">
-      <div class="w-1/2 p-4">
-        <p class="text-[20px]">
-          <img
-            src="https://cdn-icons-png.flaticon.com/128/5968/5968841.png"
-            alt="Email"
-            class="w-7 h-7 inline-block mr-2 mb-2"
-          />
-          WhatsApp:
-        </p>
-        <textarea
-          v-model="whatsappMessage"
-          placeholder="Digite uma mensagem..."
-          class="w-full min-h-[150px] border-gray-300 bg-gradient-to-tr from-gray-400 to-gray-500 rounded-2xl p-2 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm resize-none"
-          @keypress.enter.prevent="submitWppMessage(whatsappMessage)"
-        ></textarea>
-      </div>
-      <div class="w-1/2 p-4">
-        <p class="text-[20px]">
-          <img
-            src="https://cdn-icons-png.flaticon.com/128/732/732200.png"
-            alt="Email"
-            class="w-7 h-7 inline-block mr-2 mb-2"
-          />
-          Email:
-        </p>
-        <form
-          class="space-y-4 bg-gradient-to-tr from-gray-400 to-gray-500 rounded-2xl w-full p-4"
-          @submit.prevent="handleSubmit"
+  <section class="container mx-auto px-4 text-center">
+    <h2 class="text-3xl md:text-4xl font-bold text-white mb-8">
+      Get In <span class="text-blue-500">Touch</span>
+    </h2>
+    <p class="text-slate-400 text-lg max-w-2xl mx-auto mb-12">
+      I'm currently looking for new opportunities. Whether you have a question
+      or just want to say hi, I'll try my best to get back to you!
+    </p>
+
+    <div class="flex flex-col md:flex-row items-center justify-center gap-8">
+      <a
+        href="mailto:edsonstael@gmail.com"
+        class="flex items-center gap-3 px-6 py-4 bg-slate-800 rounded-xl hover:bg-slate-700 transition-colors border border-slate-700 group"
+      >
+        <div
+          class="p-3 bg-blue-500/10 rounded-full text-blue-500 group-hover:bg-blue-500 group-hover:text-white transition-colors"
         >
-          <div>
-            <label for="name" class="block text-sm font-medium text-gray-700"
-              >Nome</label
-            >
-            <input
-              type="text"
-              id="name"
-              v-model="name"
-              class="mt-1 block w-full rounded-md border-gray-300 bg-gray-500 p-2 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
-              placeholder="Seu nome"
-              required
-            />
-          </div>
-          <div>
-            <label for="email" class="block text-sm font-medium text-gray-700"
-              >Email</label
-            >
-            <input
-              type="email"
-              id="email"
-              v-model="email"
-              class="mt-1 block w-full rounded-md border-gray-300 bg-gray-500 p-2 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
-              placeholder="Seu email"
-              required
-            />
-          </div>
-          <div>
-            <label for="message" class="block text-sm font-medium text-gray-700"
-              >Mensagem</label
-            >
-            <textarea
-              id="message"
-              v-model="message"
-              minlength="30"
-              rows="4"
-              class="mt-1 block w-full rounded-md bg-gray-500 p-2 border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
-              placeholder="Sua mensagem"
-              required
-            ></textarea>
-          </div>
-          <button
-            type="submit"
-            class="inline-flex justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+          <svg
+            class="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
           >
-            Enviar
-          </button>
-        </form>
-      </div>
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+            ></path>
+          </svg>
+        </div>
+        <div class="text-left">
+          <p class="text-sm text-slate-400">Email Me</p>
+          <p class="text-white font-medium">edsonstael@gmail.com</p>
+        </div>
+      </a>
+
+      <a
+        href="https://www.linkedin.com/in/staeledson/"
+        target="_blank"
+        class="flex items-center gap-3 px-6 py-4 bg-slate-800 rounded-xl hover:bg-slate-700 transition-colors border border-slate-700 group"
+      >
+        <div
+          class="p-3 bg-blue-500/10 rounded-full text-blue-500 group-hover:bg-blue-500 group-hover:text-white transition-colors"
+        >
+          <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+            <path
+              d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
+            />
+          </svg>
+        </div>
+        <div class="text-left">
+          <p class="text-sm text-slate-400">LinkedIn</p>
+          <p class="text-white font-medium">Connect with me</p>
+        </div>
+      </a>
     </div>
-  </div>
+  </section>
 </template>
 
-<style scoped>
-.read-the-docs {
-  color: #888;
-}
-</style>
+<style scoped></style>

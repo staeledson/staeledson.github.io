@@ -1,79 +1,63 @@
 <script setup>
-import { ref } from "vue";
-
-defineProps({
-  msg: String,
-});
-
-const count = ref(0);
-
 const skills = [
-  { name: "JavaScript", image: "/javascript.png" },
-  { name: "VueJS", image: "/vue.png" },
-  { name: "React", image: "/react.png" },
-  { name: "Laravel", image: "/larevel.png" },
-  { name: "PostgreSQL", image: "/postgresSQL.png" },
-  { name: "PHP", image: "/php.png" },
-  { name: "Python", image: "/python.png" },
+  {
+    name: "Vue.js",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg",
+  },
+  {
+    name: "React",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+  },
+  {
+    name: "Laravel",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-plain.svg",
+  },
+  {
+    name: "PostgreSQL",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg",
+  },
+  {
+    name: "JavaScript",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
+  },
+  {
+    name: "Tailwind CSS",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg",
+  },
+  {
+    name: "PHP",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg",
+  },
+  {
+    name: "Python",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
+  },
 ];
 </script>
 
 <template>
-  <div class="flex flex-col">
-    <p class="text-[60px]">Skills</p>
-    <div class="skills-container mt-24">
+  <section class="container mx-auto px-4">
+    <h2 class="text-3xl md:text-4xl font-bold text-white mb-12 text-center">
+      My <span class="text-blue-500">Skills</span>
+    </h2>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
       <div
-        class="skill-card bg-gradient-to-bl from-slate-500 to-slate-300"
         v-for="skill in skills"
         :key="skill.name"
+        class="bg-slate-800/50 p-6 rounded-xl border border-slate-700 hover:border-blue-500 transition-all duration-300 hover:-translate-y-1 group flex flex-col items-center justify-center gap-4"
       >
-        <img :src="skill.image" :alt="skill.name" class="skill-image" />
-        <p class="skill-name">{{ skill.name }}</p>
+        <img
+          :src="skill.icon"
+          :alt="skill.name"
+          class="w-16 h-16 group-hover:scale-110 transition-transform duration-300"
+        />
+        <span
+          class="text-lg font-medium text-slate-300 group-hover:text-white"
+          >{{ skill.name }}</span
+        >
       </div>
     </div>
-  </div>
+  </section>
 </template>
 
-<style scoped>
-.read-the-docs {
-  color: #888;
-}
-
-.skills-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
-  justify-content: center;
-}
-
-.skill-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  border: 1px solid #302e2e;
-  border-radius: 8px;
-  padding: 16px;
-  width: 140px;
-  text-align: center;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  /* background-color: #ffffff72; */
-}
-
-.skill-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 8px 16px rgba(251, 191, 36, 0.3);
-}
-
-.skill-image {
-  width: 110px;
-  height: 90px;
-  margin-bottom: 8px;
-}
-
-.skill-name {
-  font-size: 14px;
-  font-weight: bold;
-  color: #333;
-}
-</style>
+<style scoped></style>
