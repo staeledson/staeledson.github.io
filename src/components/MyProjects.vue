@@ -1,144 +1,107 @@
 <script setup>
-import { onMounted, onUnmounted, ref } from "vue";
-
-defineProps({
-  msg: String,
-});
-
-const projects = ref([
+const projects = [
   {
-    name: "Site IGEP Saúde - Instituto de Gestão, Estudos e Pesquisa em Saúde",
+    title: "Site IGEP Saúde",
+    description:
+      "Desenvolvimento completo de website institucional para o IGEP Saúde, desde a concepção inicial até o deploy final. Utilizando o framework VueJS, criei uma plataforma moderna, responsiva e de fácil navegação.",
     image: "/print-site-igep.png",
-    description:
-      "Desenvolvimento completo de website institucional para o IGEP Saúde, desde a concepção inicial até o deploy final. Utilizando o framework VueJS, criei uma plataforma moderna, responsiva e de fácil navegação, com foco na apresentação clara dos serviços e pesquisas da instituição. Fui responsável por todo o ciclo de vida do projeto, incluindo design, implementação e otimização.",
-    link: "https://igepsaude.com.br",
+    tags: ["Vue.js", "Tailwind", "API"],
+    link: "https://www.igepsaude.org.br/",
+    github: "#",
   },
   {
-    name: "Site Grupo Pluralmed - Gestão Médica e Inovação em Saúde",
+    title: "Site Grupo Pluralmed",
+    description:
+      "Implementação de melhorias no site institucional do Grupo Pluralmed. Implementei o AlpineJS para otimizar a interatividade e integrei funcionalidades dinâmicas como aba de notícias.",
     image: "/print-site-plural.png",
-    description:
-      "Trabalhei na implementação de diversas melhorias no site institucional do Grupo Pluralmed. Entre as principais contribuições, implementei o AlpineJS para otimizar a interatividade da interface e integrar funcionalidades dinâmicas de forma simples e eficiente. Uma das funcionalidades mais notáveis foi o desenvolvimento de uma aba de notícias, que permite à equipe do Grupo Pluralmed cadastrar e atualizar as notícias diretamente no software da empresa, por meio de uma integração personalizada com a API. Essa melhoria trouxe mais agilidade e autonomia para a gestão de conteúdo do site.",
-    link: "https://grupoplural.com.br",
+    tags: ["AlpineJS", "VueJS", "API", "Tailwind"],
+    link: "https://www.pluralmed.com.br/",
+    github: "#",
   },
   {
-    name: "Vituz - Sistema SaaS de Gestão de Saúde",
-    image: "/print-vituz.png",
+    title: "Vituz - Sistema SaaS",
     description:
-      "Desde 2023, venho contribuindo no desenvolvimento e aprimoramento do Vituz, um sistema SaaS completo voltado para a gestão de saúde pública. O sistema abrange diversos módulos essenciais, como gestão de escalas médicas, estoques de almoxarifados e farmácias, emergência hospitalar, ambulatório, regulação, atenção básica e atenção especializada.",
-    link: "https://vituz.com.br",
+      "Contribuição no desenvolvimento do Vituz, um sistema SaaS completo para gestão de saúde pública. Módulos de gestão de escalas, estoques, emergência e mais.",
+    image: "/print-vituz.png",
+    tags: ["Laravel", "Vue.js", "PostgreSQL", "PHP"],
+    link: "https://vituz.app/login",
+    github: "#",
   },
-]);
-
-const isTransitioning = ref(false);
-
-const next = () => {
-  if (isTransitioning.value) return;
-  isTransitioning.value = true;
-  const firstProject = projects.value.shift();
-  projects.value.push(firstProject);
-  setTimeout(() => (isTransitioning.value = false), 300);
-};
-
-const prev = () => {
-  if (isTransitioning.value) return;
-  isTransitioning.value = true;
-  const lastProject = projects.value.pop();
-  projects.value.unshift(lastProject);
-  setTimeout(() => (isTransitioning.value = false), 300);
-};
-
-// Alternância automática
-let interval;
-onMounted(() => {
-  interval = setInterval(next, 10000); // Alterna a cada 3 segundos
-});
-
-onUnmounted(() => {
-  clearInterval(interval); // Limpa o intervalo ao desmontar o componente
-});
+];
 </script>
 
 <template>
-  <div class="flex flex-col mt-56">
-    <p class="text-[60px]">Meus Projetos</p>
-    <div class="projects-carousel mt-24 justify-center relative">
-      <button
-        @click="prev"
-        class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-gray-400 p-2 rounded-full shadow-md hover:bg-gray-500"
-      >
-        &#8592;
-      </button>
+  <section class="container mx-auto px-4">
+    <h2 class="text-3xl md:text-4xl font-bold text-white mb-12 text-center">
+      My <span class="text-blue-500">Projects</span>
+    </h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       <div
-        class="carousel flex items-center gap-5 transition-transform duration-300 ease-in-out justify-center"
+        v-for="(project, index) in projects"
+        :key="index"
+        class="bg-slate-800 rounded-xl overflow-hidden border border-slate-700 hover:border-blue-500 transition-all duration-300 hover:-translate-y-2 group"
       >
-        <div
-          v-for="(project, index) in projects"
-          :key="project.name"
-          class="rouded-lg"
-        >
-          <div v-if="index === 1" class="w-[450px] h-[600px] rounded-lg">
-            <img
-              :src="project.image"
-              :alt="project.name"
-              class="w-full h-auto rounded-lg"
-            />
-            <p class="project-name text-lg font-bold my-5">
-              {{ project.name }}
-            </p>
-            <p
-              class="project-description text-justify text-md text-gray-400 mb-4"
+        <div class="relative overflow-hidden h-48">
+          <img
+            :src="project.image"
+            :alt="project.title"
+            class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
+          />
+          <div
+            class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4"
+          >
+            <a
+              :href="project.github"
+              target="_blank"
+              class="p-2 bg-slate-900 rounded-full hover:bg-blue-600 text-white transition-colors"
+              title="View Code"
             >
-              {{ project.description }}
-            </p>
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
+                />
+              </svg>
+            </a>
             <a
               :href="project.link"
               target="_blank"
-              class="project-link flex justify-center text-blue-500 hover:underline mt-10"
-              >Ver Projeto</a
+              class="p-2 bg-slate-900 rounded-full hover:bg-blue-600 text-white transition-colors"
+              title="View Live"
             >
+              <svg
+                class="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                ></path>
+              </svg>
+            </a>
           </div>
-          <div v-else class="project-card w-[350px] h-[480px]">
-            <img
-              :src="project.image"
-              :alt="project.name"
-              class="w-full h-auto mb-4 rounded-lg opacity-50"
-            />
-            <p class="project-name text-lg font-bold mb-2 opacity-50">
-              {{ project.name }}
-            </p>
-            <p
-              class="project-description text-justify text-sm text-gray-600 mb-4 opacity-50"
+        </div>
+        <div class="p-6">
+          <h3 class="text-xl font-bold text-white mb-2">{{ project.title }}</h3>
+          <p class="text-slate-400 mb-4 line-clamp-3">
+            {{ project.description }}
+          </p>
+          <div class="flex flex-wrap gap-2">
+            <span
+              v-for="tag in project.tags"
+              :key="tag"
+              class="px-3 py-1 text-xs font-medium text-blue-400 bg-blue-400/10 rounded-full border border-blue-400/20"
             >
-              {{ project.description }}
-            </p>
-            <a
-              :href="project.link"
-              target="_blank"
-              class="project-link flex justify-center text-blue-500 hover:underline opacity-50"
-              >Ver Projeto</a
-            >
+              {{ tag }}
+            </span>
           </div>
         </div>
       </div>
-
-      <button
-        @click="next"
-        class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-gray-400 p-2 rounded-full shadow-md hover:bg-gray-500"
-      >
-        &#8594;
-      </button>
     </div>
-  </div>
+  </section>
 </template>
 
-<style scoped>
-.project-card {
-  transition: transform 0.3s ease, z-index 0.3s ease;
-}
-
-/* .project-card.scale-110 {
-:class="{ 'scale-110 z-10 bg-red-200 w-[400px] h-[600px]': index === 1 }"
-  transform: scale(1.2);
-  z-index: 10;
-} */
-</style>
+<style scoped></style>
