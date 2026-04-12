@@ -1,4 +1,8 @@
 <script setup>
+import { useLocale } from "../composables/useLocale.js";
+
+const { t } = useLocale();
+
 const skills = [
   {
     name: "Vue.js",
@@ -10,7 +14,15 @@ const skills = [
   },
   {
     name: "Laravel",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-plain.svg",
+    icon: "https://devicon-website.vercel.app/api/laravel/plain.svg",
+  },
+  {
+    name: "PHP",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg",
+  },
+  {
+    name: "Node.js",
+    icon: "https://devicon-website.vercel.app/api/nodejs/original.svg",
   },
   {
     name: "PostgreSQL",
@@ -20,14 +32,10 @@ const skills = [
     name: "JavaScript",
     icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
   },
-  {
-    name: "Tailwind CSS",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg",
-  },
-  {
-    name: "PHP",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg",
-  },
+  // {
+  //   name: "Tailwind CSS",
+  //   icon: "https://devicon-website.vercel.app/api/tailwindcss/plain.svg",
+  // },
   {
     name: "Python",
     icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
@@ -36,23 +44,27 @@ const skills = [
 </script>
 
 <template>
-  <section class="container mx-auto px-4">
-    <h2 class="text-3xl md:text-4xl font-bold text-white mb-12 text-center">
-      My <span class="text-blue-500">Skills</span>
+  <section class="w-full" aria-labelledby="skills-heading">
+    <h2
+      id="skills-heading"
+      class="text-3xl md:text-4xl font-bold text-white mb-10 md:mb-12 text-center"
+    >
+      {{ t("skills.title") }}
+      <span class="text-blue-500">{{ t("skills.titleHighlight") }}</span>
     </h2>
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 sm:gap-6">
       <div
         v-for="skill in skills"
         :key="skill.name"
-        class="bg-slate-800/50 p-6 rounded-xl border border-slate-700 hover:border-blue-500 transition-all duration-300 hover:-translate-y-1 group flex flex-col items-center justify-center gap-4"
+        class="bg-slate-800/50 p-4 sm:p-6 rounded-xl border border-slate-700 hover:border-blue-500 transition-all duration-300 hover:-translate-y-1 group flex flex-col items-center justify-center gap-3 sm:gap-4 min-w-0"
       >
         <img
           :src="skill.icon"
           :alt="skill.name"
-          class="w-16 h-16 group-hover:scale-110 transition-transform duration-300"
+          class="w-12 h-12 sm:w-16 sm:h-16 shrink-0 group-hover:scale-110 transition-transform duration-300"
         />
         <span
-          class="text-lg font-medium text-slate-300 group-hover:text-white"
+          class="text-sm sm:text-lg font-medium text-slate-300 group-hover:text-white text-center leading-tight break-words hyphens-auto"
           >{{ skill.name }}</span
         >
       </div>
