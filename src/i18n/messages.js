@@ -39,28 +39,32 @@ export const messages = {
       viewLive: "Ver site",
       overlayCode: "Ver repositório",
       overlayLive: "Abrir site",
-      items: [
-        {
+      carouselAria: "Carrossel de projetos em destaque",
+      prev: "Projeto anterior",
+      next: "Próximo projeto",
+      goToSlide: "Ir para o projeto {n}",
+      items: {
+        igep: {
           title: "Site IGEP Saúde",
           description:
             "Desenvolvimento completo do site institucional do IGEP Saúde, da concepção ao deploy. Com Vue.js, entreguei uma plataforma moderna, responsiva e fácil de navegar.",
         },
-        {
+        pluralmed: {
           title: "Site Grupo Pluralmed",
           description:
             "Melhorias no site institucional do Grupo Pluralmed. Alpine.js para interatividade e integrações como aba de notícias.",
         },
-        {
+        vituz: {
           title: "Vituz — sistema SaaS",
           description:
             "Contribuição no Vituz, SaaS para gestão em saúde pública: escalas, estoques, emergência e outros módulos.",
         },
-        {
+        construsoft: {
           title: "Construsoft website",
           description:
             "Desenvolvimento completo do SaaS de gestão de obras da Construsoft, da concepção ao deploy. Backend em Node.js, NestJS e autenticação com JWT e integração com API de obras, entreguei uma plataforma moderna, responsiva e fácil de navegar.",
         },
-      ],
+      },
     },
     contacts: {
       title: "Vamos",
@@ -116,28 +120,32 @@ export const messages = {
       viewLive: "Live site",
       overlayCode: "View repository",
       overlayLive: "Open live site",
-      items: [
-        {
+      carouselAria: "Featured projects carousel",
+      prev: "Previous project",
+      next: "Next project",
+      goToSlide: "Go to project {n}",
+      items: {
+        igep: {
           title: "IGEP Saúde website",
           description:
             "End-to-end institutional site for IGEP Saúde, from concept to deploy. Built with Vue.js — modern, responsive, and easy to navigate.",
         },
-        {
+        pluralmed: {
           title: "Grupo Pluralmed website",
           description:
             "Improvements to the Grupo Pluralmed institutional site. Alpine.js for interactivity and features such as a news section.",
         },
-        {
+        vituz: {
           title: "Vituz — SaaS platform",
           description:
             "Contributions to Vituz, a public-health management SaaS: scheduling, inventory, emergency modules, and more.",
         },
-        {
+        construsoft: {
           title: "Construsoft SaaS",
           description:
             "Development of the SaaS for construction management from Construsoft, from concept to deploy. Backend in Node.js, NestJS and authentication with JWT and integration with the construction API, delivered a modern, responsive and easy to navigate platform.",
         },
-      ],
+      },
     },
     contacts: {
       title: "Get in",
