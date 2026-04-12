@@ -23,7 +23,7 @@ watch(locale, (v) => {
 });
 
 /**
- * Resolve nested keys like "nav.home" or "projects.items.0.title"
+ * Resolve nested keys like "nav.home" or "projects.items.igep.title"
  */
 function t(key) {
   const parts = String(key).split(".");
