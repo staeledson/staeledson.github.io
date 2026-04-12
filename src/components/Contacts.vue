@@ -1,28 +1,40 @@
-<script setup></script>
+<script setup>
+import { useLocale } from "../composables/useLocale.js";
+
+const { t } = useLocale();
+</script>
 
 <template>
-  <section class="container mx-auto px-4 text-center">
-    <h2 class="text-3xl md:text-4xl font-bold text-white mb-8">
-      Get In <span class="text-blue-500">Touch</span>
+  <section class="w-full text-center" aria-labelledby="contacts-heading">
+    <h2
+      id="contacts-heading"
+      class="text-3xl md:text-4xl font-bold text-white mb-6 md:mb-8"
+    >
+      {{ t("contacts.title") }}
+      <span class="text-blue-500">{{ t("contacts.titleHighlight") }}</span>
     </h2>
-    <p class="text-slate-400 text-lg max-w-2xl mx-auto mb-12">
-      I'm currently looking for new opportunities. Whether you have a question
-      or just want to say hi, I'll try my best to get back to you!
+    <p
+      class="text-slate-400 text-base sm:text-lg max-w-2xl mx-auto mb-10 md:mb-12 px-1"
+    >
+      {{ t("contacts.intro") }}
     </p>
 
-    <div class="flex flex-col md:flex-row items-center justify-center gap-8">
+    <div
+      class="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-4 sm:gap-8 max-w-2xl mx-auto"
+    >
       <a
         href="mailto:edsonstael@gmail.com"
-        class="flex items-center gap-3 px-6 py-4 bg-slate-800 rounded-xl hover:bg-slate-700 transition-colors border border-slate-700 group"
+        class="flex items-center gap-3 px-5 sm:px-6 py-4 bg-slate-800 rounded-xl hover:bg-slate-700 transition-colors border border-slate-700 group w-full sm:w-auto sm:min-w-0 min-w-0"
       >
         <div
-          class="p-3 bg-blue-500/10 rounded-full text-blue-500 group-hover:bg-blue-500 group-hover:text-white transition-colors"
+          class="p-3 bg-blue-500/10 rounded-full text-blue-500 group-hover:bg-blue-500 group-hover:text-white transition-colors shrink-0"
         >
           <svg
             class="w-6 h-6"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
+            aria-hidden="true"
           >
             <path
               stroke-linecap="round"
@@ -32,29 +44,32 @@
             ></path>
           </svg>
         </div>
-        <div class="text-left">
-          <p class="text-sm text-slate-400">Email Me</p>
-          <p class="text-white font-medium">edsonstael@gmail.com</p>
+        <div class="text-left min-w-0 flex-1">
+          <p class="text-sm text-slate-400">{{ t("contacts.emailAction") }}</p>
+          <p class="text-white font-medium truncate sm:whitespace-normal break-all">
+            edsonstael@gmail.com
+          </p>
         </div>
       </a>
 
       <a
         href="https://www.linkedin.com/in/staeledson/"
         target="_blank"
-        class="flex items-center gap-3 px-6 py-4 bg-slate-800 rounded-xl hover:bg-slate-700 transition-colors border border-slate-700 group"
+        rel="noopener noreferrer"
+        class="flex items-center gap-3 px-5 sm:px-6 py-4 bg-slate-800 rounded-xl hover:bg-slate-700 transition-colors border border-slate-700 group w-full sm:w-auto sm:min-w-0 min-w-0"
       >
         <div
-          class="p-3 bg-blue-500/10 rounded-full text-blue-500 group-hover:bg-blue-500 group-hover:text-white transition-colors"
+          class="p-3 bg-blue-500/10 rounded-full text-blue-500 group-hover:bg-blue-500 group-hover:text-white transition-colors shrink-0"
         >
-          <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+          <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
             <path
               d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
             />
           </svg>
         </div>
-        <div class="text-left">
+        <div class="text-left min-w-0 flex-1">
           <p class="text-sm text-slate-400">LinkedIn</p>
-          <p class="text-white font-medium">Connect with me</p>
+          <p class="text-white font-medium">{{ t("contacts.linkedinAction") }}</p>
         </div>
       </a>
     </div>
