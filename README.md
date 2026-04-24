@@ -1,11 +1,16 @@
-Para rodar o projeto: npm run dev
+Para rodar o projeto localmente:
 
-Para subir as alterações do seu projeto para o site (GitHub Pages), basta seguir estes passos:
+```bash
+npm install
+npm run dev
+```
 
-Salve todas as alterações no seu projeto local.
+Para publicar no GitHub Pages (branch `gh-pages`), estando na branch **`main`** com as alterações commitadas:
 
-Faça o build do projeto:
+```bash
+npm run deploy
+```
 
-Faça o deploy para o GitHub Pages:
-Esses comandos vão gerar a versão de produção do seu site e publicar automaticamente no GitHub Pages.
-Após alguns segundos, acesse novamente o link do seu site (https://staeledson.github.io/) para ver as atualizações.
+Esse comando gera o build em `dist/` e envia o conteúdo para a branch `gh-pages` (não é necessário fazer merge manual de `main` em `gh-pages`). No repositório, em **Settings → Pages**, a fonte deve estar como branch **`gh-pages`** na raiz (`/`).
+
+Depois de alguns segundos, o site atualiza em https://staeledson.github.io/
