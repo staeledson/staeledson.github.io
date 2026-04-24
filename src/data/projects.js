@@ -32,4 +32,11 @@ export const projects = [
     link: "https://www.construsoft.com.br/",
     github: null,
   },
+  {
+    id: "Assistente conversacional com IA sobre documentos (RAG)",
+    image: "/print-assistentente-rag.png",
+    tags: ["Python", "RAG", "LLM", "LangChain", "OpenRouter"],
+    link: null,
+    github: "https://github.com/staeledson/assistente-rag",
+  },
 ];
