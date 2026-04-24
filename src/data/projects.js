@@ -33,7 +33,7 @@ export const projects = [
     github: null,
   },
   {
-    id: "Assistente conversacional com IA sobre documentos (RAG)",
+    id: "assistente-rag",
     image: "/print-assistentente-rag.jpg",
     tags: ["Python", "RAG", "LLM", "LangChain", "OpenRouter"],
     link: null,
