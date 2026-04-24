@@ -64,7 +64,7 @@ export const messages = {
           description:
             "Desenvolvimento completo do SaaS de gestão de obras da Construsoft, da concepção ao deploy. Backend em Node.js, NestJS e autenticação com JWT e integração com API de obras, entreguei uma plataforma moderna, responsiva e fácil de navegar.",
         },
-        "assistente-rag": {
+        assistenteRag: {
           title: "Assistente conversacional com IA sobre documentos (RAG)",
           description:
             "Chatbot que responde com base em documentos enviados: indexação, busca semântica e respostas via LLM (LangChain, OpenRouter).",
@@ -150,7 +150,7 @@ export const messages = {
           description:
             "Development of the SaaS for construction management from Construsoft, from concept to deploy. Backend in Node.js, NestJS and authentication with JWT and integration with the construction API, delivered a modern, responsive and easy to navigate platform.",
         },
-        "assistente-rag": {
+        assistenteRag: {
           title: "Conversational AI assistant for documents (RAG)",
           description:
             "Chatbot grounded in uploaded documents: indexing, semantic retrieval, and LLM answers with LangChain and OpenRouter.",
