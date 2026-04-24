@@ -34,7 +34,7 @@ export const projects = [
   },
   {
     id: "assistenteRag",
-    image: "/print-assistentente-rag.png",
+    image: "/print-assistente-rag.png",
     tags: ["Python", "RAG", "LLM", "LangChain", "OpenRouter"],
     link: null,
     github: "https://github.com/staeledson/assistente-rag",
