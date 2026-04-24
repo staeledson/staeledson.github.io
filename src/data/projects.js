@@ -34,7 +34,7 @@ export const projects = [
   },
   {
     id: "Assistente conversacional com IA sobre documentos (RAG)",
-    image: "/print-assistentente-rag.png",
+    image: "/print-assistentente-rag.jpg",
     tags: ["Python", "RAG", "LLM", "LangChain", "OpenRouter"],
     link: null,
     github: "https://github.com/staeledson/assistente-rag",
