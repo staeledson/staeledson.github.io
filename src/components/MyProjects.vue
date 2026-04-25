@@ -240,6 +240,7 @@ const trackStyle = computed(() => ({
                   </svg>
                 </a>
                 <a
+                  v-if="project.link"
                   :href="project.link"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -292,6 +293,7 @@ const trackStyle = computed(() => ({
                   {{ t("projects.viewCode") }}
                 </a>
                 <a
+                  v-if="project.link"
                   :href="project.link"
                   target="_blank"
                   rel="noopener noreferrer"
