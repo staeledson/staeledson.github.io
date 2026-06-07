@@ -4,8 +4,7 @@
 
 /* =========================================================================
    Design system — ported from the validated HTML build.
-   Accent is driven by --accent / --accent-2 / --accent-rgb and can be
-   swapped at runtime (ThemeContext) or hard-set in :root below.
+   Accent is defined by --accent / --accent-2 / --accent-rgb in :root below.
    ========================================================================= */
 :root {
   --bg: #0a0a0f;
@@ -352,10 +351,3 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   .avatar-badge--1 { left: -4%; }
   .avatar-badge--2 { right: -2%; }
 }
-
-/* ---------- Accent switcher (Next.js extra) ---------- */
-.accent-switch { position: fixed; right: 18px; bottom: 18px; z-index: 60; display: flex; gap: 8px; padding: 9px 11px; border-radius: 999px; background: rgba(14,14,21,.82); backdrop-filter: blur(12px); border: 1px solid var(--border-strong); box-shadow: 0 12px 30px -12px rgba(0,0,0,.8); }
-.accent-dot { width: 20px; height: 20px; border-radius: 50%; border: 2px solid transparent; transition: transform .18s ease, border-color .18s ease; }
-.accent-dot:hover { transform: scale(1.12); }
-.accent-dot.is-on { border-color: #fff; }
-@media (max-width: 680px) { .accent-switch { right: 12px; bottom: 12px; padding: 7px 9px; } .accent-dot { width: 18px; height: 18px; } }
