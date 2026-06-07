@@ -1,7 +1,7 @@
 # Stael Edson — Portfólio (Next.js)
 
 Portfólio profissional de **Stael Edson**, Desenvolvedor Full Stack (Laravel, Vue.js, Node.js & IA).
-Build moderno, bilíngue (PT/EN), dark mode, focado em conversão para recrutadores e gestores técnicos.
+Build moderno, bilíngue (PT/EN), dark mode.
 
 **Stack:** Next.js 14 (App Router) · TypeScript · TailwindCSS · Framer Motion
 
@@ -113,11 +113,6 @@ com resultado mensurável + recomendações reais do LinkedIn) e termina em **CT
 ---
 
 ## ☁️ Deploy
-
-### Vercel (recomendado)
-1. Suba o repositório no GitHub.
-2. Importe em [vercel.com/new](https://vercel.com/new) — detecta Next.js automaticamente.
-3. Deploy. Pronto.
 
 ### GitHub Pages (export estático)
 O site é estático por natureza. Para exportar:
