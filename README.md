@@ -91,7 +91,7 @@ Animações sutis: entradas no scroll (`Reveal`, via Framer Motion `whileInView`
 
 ---
 
-## 🔎 SEO (já configurado)
+## 🔎 SEO
 
 - `metadata` em `layout.tsx`: title, description, keywords, canonical, robots.
 - **Open Graph** + **Twitter Card** com imagem.
@@ -102,35 +102,3 @@ Animações sutis: entradas no scroll (`Reveal`, via Framer Motion `whileInView`
 > Troque `SITE` em `layout.tsx` pela URL final de produção.
 
 ---
-
-## 🗺️ Arquitetura da informação
-
-`Hero → Sobre → Stats → Skills → Experiência → Projetos (case studies) → Diferenciais → Depoimentos → Contato → Footer`
-
-O fluxo leva o recrutador da **proposta de valor** (hero) à **prova** (experiência + projetos
-com resultado mensurável + recomendações reais do LinkedIn) e termina em **CTA de contratação**.
-
----
-
-## ☁️ Deploy
-
-### GitHub Pages (export estático)
-O site é estático por natureza. Para exportar:
-```js
-// next.config.mjs
-const nextConfig = { output: "export", images: { unoptimized: true } };
-```
-```bash
-npm run build   # gera ./out
-```
-Publique a pasta `out/` no branch `gh-pages` (ou use a GitHub Action oficial do Next).
-
----
-
-## ✅ Pendências do dono
-
-1. **CV em PDF** — coloque o arquivo em `public/cv.pdf`, ajuste `links.cv` em `content.ts` e
-   reative o botão "Baixar CV" no `Hero.tsx` (bloco comentado) e no `Nav`.
-2. **Foto** — `public/profile.jpg` (ideal: foto mais profissional, fundo neutro).
-3. **Depoimentos** — já incluídos 4 do LinkedIn; revise os textos se quiser na íntegra.
-```
