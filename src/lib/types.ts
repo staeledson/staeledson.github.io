@@ -2,7 +2,7 @@ export type Lang = "pt" | "en";
 
 export interface NavLink { id: string; label: string }
 export interface StatItem { value: number; suffix: string; label: string }
-export interface SkillItem { name: string; level: number }
+export interface SkillItem { name: string; level: number; note?: string }
 export interface SkillCategory { id: string; pt: string; en: string; items: SkillItem[] }
 export interface ExperienceItem {
   role: string; company: string; location: string; period: string;

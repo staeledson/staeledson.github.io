@@ -29,6 +29,7 @@ export default function Skills() {
                         style={{ "--w": `${it.level}%` } as React.CSSProperties}
                       />
                     </span>
+                    {it.note && <span className="skill-note">{it.note}</span>}
                   </li>
                 ))}
               </ul>

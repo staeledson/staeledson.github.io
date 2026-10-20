@@ -317,12 +317,12 @@ export const projects: Project[] = [
       pt: "Backend",
       en: "Backend",
       items: [
-        { name: "PHP", level: 90 },
-        { name: "Laravel", level: 90 },
-        { name: "Node.js", level: 75 },
-        { name: "NestJS", level: 70 },
+        { name: "PHP / Laravel", level: 90 },
         { name: "APIs REST", level: 88 },
-        { name: "Queues & Jobs", level: 72 },
+        { name: "Node.js", level: 78 },
+        { name: "NestJS", level: 72 },
+        { name: "Python", level: 72 },
+        { name: "Queues & Jobs", level: 72, note: "Redis · BullMQ" },
       ],
     },
     {
@@ -331,10 +331,10 @@ export const projects: Project[] = [
       en: "Frontend",
       items: [
         { name: "Vue.js", level: 90 },
-        { name: "React", level: 72 },
-        { name: "JavaScript", level: 88 },
-        { name: "Alpine.js", level: 75 },
         { name: "Tailwind CSS", level: 85 },
+        { name: "TypeScript", level: 78 },
+        { name: "Next.js", level: 75 },
+        { name: "React", level: 72 },
       ],
     },
     {
@@ -343,8 +343,8 @@ export const projects: Project[] = [
       en: "Database",
       items: [
         { name: "PostgreSQL", level: 88 },
+        { name: "Supabase", level: 78, note: "RLS · Edge Functions" },
         { name: "MySQL", level: 78 },
-        { name: "Migrations", level: 85 },
       ],
     },
     {
@@ -353,9 +353,9 @@ export const projects: Project[] = [
       en: "DevOps",
       items: [
         { name: "Docker", level: 75 },
-        { name: "AWS EC2", level: 70 },
-        { name: "GitHub Actions", level: 75 },
-        { name: "CI/CD", level: 74 },
+        { name: "CI/CD", level: 75, note: "GitHub Actions" },
+        { name: "Vercel", level: 75 },
+        { name: "AWS", level: 70, note: "EC2 · ECS · ECR · S3 · SQS" },
       ],
     },
     {
@@ -363,10 +363,10 @@ export const projects: Project[] = [
       pt: "IA",
       en: "AI",
       items: [
-        { name: "RAG", level: 72 },
+        { name: "LLMs", level: 85, note: "OpenAI · Claude · Gemini · OpenRouter" },
+        { name: "RAG", level: 72, note: "pgvector" },
+        { name: "MCP", level: 70 },
         { name: "LangChain", level: 70 },
-        { name: "LLMs", level: 72 },
-        { name: "Python", level: 72 },
       ],
     },
   ];
@@ -389,7 +389,7 @@ export const projects: Project[] = [
       role: "Desenvolvedor Full Stack",
       h1a: "Transformo regras de negócio complexas em",
       h1b: "sistemas SaaS escaláveis.",
-      sub: "Desenvolvedor Full Stack focado em Laravel, Node.js, Next.js e IA. 3,5+ anos construindo plataformas de saúde e gestão usadas por redes municipais e empresas.",
+      sub: "Desenvolvedor Full Stack focado em Laravel, Node.js, Next.js e IA. 3,5+ anos construindo plataformas de gestão em saúde e sistemas corporativos.",
       ctaProjects: "Ver projetos",
       ctaLinkedin: "LinkedIn",
       ctaGithub: "GitHub",
@@ -567,7 +567,7 @@ export const projects: Project[] = [
       role: "Full Stack Developer",
       h1a: "I turn complex business rules into",
       h1b: "scalable SaaS systems.",
-      sub: "Full Stack developer focused on Laravel, Node.js, Next.js and AI. 3.5+ years building health and management platforms used by municipal networks and companies.",
+      sub: "Full Stack developer focused on Laravel, Node.js, Next.js and AI. 3.5+ years building healthcare management platforms and business systems.",
       ctaProjects: "View projects",
       ctaLinkedin: "LinkedIn",
       ctaGithub: "GitHub",
