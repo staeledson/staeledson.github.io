@@ -28,11 +28,11 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE),
   title: "Stael Edson · Desenvolvedor Full Stack — Laravel, Vue.js & IA",
   description:
-    "Stael Edson — Desenvolvedor Full Stack especializado em Laravel, PHP, Vue.js, Node.js, PostgreSQL, Docker e IA (RAG). Construo sistemas SaaS escaláveis. Aberto a vagas remotas.",
+    "Stael Edson — Desenvolvedor Full Stack especializado em Laravel, PHP, Vue.js, Node.js, PostgreSQL, Docker e IA (RAG). Construo sistemas SaaS escaláveis. Disponível para projetos freelance e PJ.",
   keywords: [
     "desenvolvedor full stack", "full stack developer", "Laravel", "PHP", "Vue.js",
     "Node.js", "NestJS", "PostgreSQL", "Docker", "AWS", "CI/CD", "RAG", "IA",
-    "LangChain", "SaaS", "remoto", "Stael Edson",
+    "LangChain", "SaaS", "freelancer", "PJ", "remoto", "Stael Edson",
   ],
   authors: [{ name: "Stael Edson" }],
   robots: { index: true, follow: true },

@@ -6,7 +6,11 @@ import SectionHead from "./ui/SectionHead";
 import { IconArrowUpRight, IconGithub, IconLinkedin, IconMail, IconWhatsapp } from "./icons";
 
 export default function Contact() {
-  const { t } = useLang();
+  const { t, lang } = useLang();
+  const quoteText = lang === "pt"
+    ? "Olá, Stael! Vi seu portfólio e gostaria de um orçamento para um projeto."
+    : "Hi Stael! I saw your portfolio and would like a quote for a project.";
+  const quoteHref = `${links.whatsapp}?text=${encodeURIComponent(quoteText)}`;
   const cards = [
     { k: t.contact.email, v: links.email, href: `mailto:${links.email}`, icon: <IconMail size={20} />, ext: false },
     { k: t.contact.whatsapp, v: links.whatsappLabel, href: links.whatsapp, icon: <IconWhatsapp size={20} />, ext: true },
@@ -36,7 +40,7 @@ export default function Contact() {
           ))}
         </div>
         <div className="contact-cta">
-          <a className="btn btn--solid btn--lg" href={links.whatsapp} target="_blank" rel="noopener noreferrer">
+          <a className="btn btn--solid btn--lg" href={quoteHref} target="_blank" rel="noopener noreferrer">
             <IconWhatsapp size={18} />{t.contact.cta}
           </a>
           <span className="contact-avail"><span className="avail-dot" aria-hidden="true" />{t.contact.availability}</span>
