@@ -12,7 +12,7 @@ export default function About() {
       <div className="container about-grid">
         <div className="about-media">
           <Reveal className="about-photo">
-            <Image src="/profile.jpg" alt={t.about.photoAlt} width={520} height={640} />
+            <Image src="/profile-about.jpg" alt={t.about.photoAlt} width={840} height={1050} />
             <div className="about-photo-tag">
               <span className="avail-dot" aria-hidden="true" />Sobral · BR
             </div>

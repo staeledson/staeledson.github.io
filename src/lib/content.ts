@@ -408,7 +408,7 @@ export const projects: Project[] = [
     stats: {
       kicker: "Em números",
       items: [
-        { value: 3, suffix: "+", label: "anos de experiência" },
+        { value: 3.5, suffix: "+", label: "anos de experiência" },
         { value: 20, suffix: "+", label: "sistemas e produtos entregues" },
         { value: 25, suffix: "%", label: "mais rápido em módulos críticos" },
         { value: 30, suffix: "%", label: "entregas aceleradas com componentes" },
@@ -586,7 +586,7 @@ export const projects: Project[] = [
     stats: {
       kicker: "By the numbers",
       items: [
-        { value: 3, suffix: "+", label: "years of experience" },
+        { value: 3.5, suffix: "+", label: "years of experience" },
         { value: 20, suffix: "+", label: "systems and products shipped" },
         { value: 25, suffix: "%", label: "faster critical modules" },
         { value: 30, suffix: "%", label: "faster delivery with components" },

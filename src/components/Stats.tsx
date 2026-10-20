@@ -11,7 +11,7 @@ export default function Stats() {
       <div className="container stats-grid">
         {t.stats.items.map((s, i) => (
           <Reveal className="stat" key={i} delay={i * 70}>
-            <div className="stat-num"><CountUp value={s.value} suffix={s.suffix} /></div>
+            <div className="stat-num"><CountUp value={s.value} suffix={s.suffix} locale={t.meta.lang} /></div>
             <div className="stat-label">{s.label}</div>
           </Reveal>
         ))}
