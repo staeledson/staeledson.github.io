@@ -28,15 +28,15 @@ npm run build && npm start
 
 ```
 portfolio-nextjs/
-├── public/                     # imagens (profile.jpg + screenshots dos projetos)
+├── public/                     # imagens (profile.jpg, og.png 1200×630 + screenshots WebP)
 ├── src/
 │   ├── app/
 │   │   ├── layout.tsx          # <head>, metadata SEO, Open Graph, JSON-LD, fontes
+│   │   ├── sitemap.ts · robots.ts
 │   │   ├── page.tsx            # monta todas as seções
 │   │   └── globals.css         # design system completo (tokens + componentes)
 │   ├── context/
-│   │   ├── LangContext.tsx     # i18n PT/EN + persistência (localStorage)
-│   │   └── ThemeContext.tsx    # troca de cor de destaque (accent)
+│   │   └── LangContext.tsx     # i18n PT/EN + persistência (localStorage)
 │   ├── lib/
 │   │   ├── content.ts          # ⭐ FONTE ÚNICA de conteúdo (PT/EN, projetos, skills)
 │   │   └── types.ts            # tipos do dicionário e das entidades
@@ -45,8 +45,7 @@ portfolio-nextjs/
 │       ├── icons.tsx           # ícones SVG (stroke + marcas)
 │       ├── Nav · Hero · About · Stats · Skills · Experience
 │       ├── Projects · ProjectModal   # estudos de caso em modal
-│       ├── Differentials · Testimonials · Contact · Footer
-│       └── AccentSwitcher.tsx  # seletor de cor flutuante
+│       └── Differentials · Testimonials · Contact · Footer
 ├── tailwind.config.ts
 ├── next.config.mjs
 └── tsconfig.json
@@ -65,7 +64,8 @@ Quase tudo vive em **`src/lib/content.ts`** — um único objeto com as versões
 - **Depoimentos:** `pt.testimonials.items` / `en.testimonials.items`.
 - **Links de contato:** objeto `links` (email, LinkedIn, GitHub, WhatsApp, cv).
 
-Imagens novas: coloque em `public/` e referencie como `/arquivo.png`.
+Imagens novas: converta para WebP (~1600 px de largura), coloque em `public/` e referencie como `/arquivo.webp`.
+Exemplo: `cwebp -q 82 -resize 1600 0 print.png -o public/print.webp`.
 
 ---
 
@@ -77,14 +77,13 @@ Definido em `globals.css` via CSS custom properties:
 |---|---|
 | Fundo | `--bg #0a0a0f` · `--bg-2 #0c0c13` |
 | Texto | `--text #f3f3f7` · `--text-muted` · `--text-dim` |
-| Destaque | `--accent` (default indigo `#6366f1`) — trocável em runtime |
+| Destaque | `--accent` (indigo `#6366f1`) |
 | Tipografia | Display **Space Grotesk** · Corpo **Manrope** · Mono **JetBrains Mono** |
 | Raio | `--r 16px` · `--r-lg 22px` |
 | Largura | `--maxw 1180px` |
 
-A **cor de destaque** é dirigida por `--accent / --accent-2 / --accent-rgb`. O `ThemeContext`
-troca essas variáveis (6 presets) e persiste a escolha. Para fixar uma cor padrão, edite o
-`:root` em `globals.css` ou o estado inicial em `ThemeContext.tsx`.
+A **cor de destaque** é dirigida por `--accent / --accent-2 / --accent-rgb`. Para trocá-la, edite o
+`:root` em `globals.css`.
 
 Animações sutis: entradas no scroll (`Reveal`, via Framer Motion `whileInView`), contadores
 (`CountUp`), hovers em cards/botões. Tudo respeita `prefers-reduced-motion`.

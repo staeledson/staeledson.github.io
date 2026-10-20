@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     title: "Stael Edson · Desenvolvedor Full Stack — Laravel, Vue.js & IA",
     description:
       "Construo sistemas SaaS escaláveis com Laravel, Vue.js, Node.js e IA. Veja meus projetos e estudos de caso.",
-    images: [{ url: "/profile.jpg", width: 460, height: 460, alt: "Stael Edson" }],
+    images: [{ url: "/og.png", width: 1200, height: 630, alt: "Stael Edson · Desenvolvedor Full Stack" }],
     locale: "pt_BR",
     alternateLocale: "en_US",
   },
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Stael Edson · Full Stack Developer — Laravel, Vue.js & AI",
     description: "Building scalable SaaS systems with Laravel, Vue.js, Node.js and AI.",
-    images: ["/profile.jpg"],
+    images: ["/og.png"],
   },
   icons: {
     icon:

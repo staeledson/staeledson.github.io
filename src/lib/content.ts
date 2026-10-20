@@ -5,7 +5,7 @@ import type { Dictionary, Lang, Project, SkillCategory } from "./types";
 export const projects: Project[] = [
     {
       id: "vituz",
-      image: "/print-vituz.png",
+      image: "/print-vituz.webp",
       featured: true,
       tags: ["Laravel", "Vue.js", "PostgreSQL", "PHP", "Docker"],
       link: "https://vituz.app/login",
@@ -38,10 +38,180 @@ export const projects: Project[] = [
       },
     },
     {
-      id: "construsoft",
-      image: "/print-site-construsoft.png",
+      id: "portal",
+      image: "/print-portal.webp",
       featured: true,
-      tags: ["Node.js", "NestJS", "PostgreSQL", "JWT"],
+      tags: ["Next.js", "React", "TypeScript", "Supabase", "PostgreSQL", "Playwright"],
+      link: null,
+      github: null,
+      pt: {
+        title: "Intranet Corporativa",
+        category: "Plataforma interna · Pessoas & Processos",
+        tagline: "Cultura, processos e gestão de talentos de 20 áreas num só lugar.",
+        problem:
+          "Diretrizes, processos, cargos e indicadores das áreas do grupo estavam espalhados em documentos soltos, e a gestão de talentos (avaliações, sucessão, onboarding) era feita em planilhas e formulários avulsos.",
+        solution:
+          "Intranet que concentra a ideologia, a cadeia de valor e os macroprocessos do grupo, organiza cada área em camadas (diretrizes, processos/POPs, indicadores) e digitaliza a gestão de pessoas: testes DISC e MBTI, 9-Box de sucessão, avaliação 360 com Janela de Johari, onboarding por área e BI de aderência ao report diário.",
+        challenge:
+          "Controlar o acesso pela hierarquia real da empresa sem expor dados sensíveis: o navegador não lê tabelas diretamente — tudo passa por RPCs no padrão Backend-for-Frontend, com RLS no Postgres e login único com os demais sistemas do grupo.",
+        result:
+          "Em produção para os colaboradores do grupo, com 40 arquivos de teste. Sou o principal autor do código. Um motor de documentos gerou 60+ documentos institucionais padronizados a partir do conteúdo das áreas.",
+      },
+      en: {
+        title: "Corporate Intranet",
+        category: "Internal platform · People & Processes",
+        tagline: "Culture, processes and talent management for 20 departments in one place.",
+        problem:
+          "Guidelines, processes, roles and KPIs of the group's departments were scattered across loose documents, and talent management (assessments, succession, onboarding) ran on spreadsheets and ad-hoc forms.",
+        solution:
+          "An intranet that centralizes the group's mission, value chain and macro-processes, organizes each department in layers (guidelines, processes/SOPs, KPIs) and digitizes people management: DISC and MBTI tests, 9-Box succession grid, 360 feedback with Johari Window, per-department onboarding and BI on daily-report adherence.",
+        challenge:
+          "Enforcing access by the company's real hierarchy without exposing sensitive data: the browser never reads tables directly — everything goes through Backend-for-Frontend RPCs, with Postgres RLS and single sign-on shared with the group's other systems.",
+        result:
+          "In production for the group's employees, with 40 test files. I'm the main author of the codebase. A document engine generated 60+ standardized institutional documents from the departments' content.",
+      },
+    },
+    {
+      id: "cadernim",
+      image: "/print-cadernim.webp",
+      featured: true,
+      tags: ["Next.js", "TypeScript", "PostgreSQL", "Drizzle", "Mercado Pago", "LLM", "Docker"],
+      link: "https://receitas-app.construsoft.online/p/cadernim",
+      github: null,
+      pt: {
+        title: "Cadernim de Receitas",
+        category: "Produto próprio · PWA pago",
+        tagline: "App de receitas vendido online, do PDF ao pagamento.",
+        problem:
+          "Uma coleção de receitas existia só em PDFs: sem busca, sem filtros por dieta e sem forma de ser vendida como produto digital.",
+        solution:
+          "PWA com 1.100+ receitas extraídas dos PDFs por um pipeline com LLM e revisadas no painel admin com versionamento. Tem busca por receita ou ingrediente, filtros por dieta, favoritos, login por código enviado ao e-mail e venda por pagamento único no Mercado Pago.",
+        challenge:
+          "Garantir dados confiáveis vindos de PDFs (revisão em lote validada por formato e paridade de regras entre Python e TypeScript) e um checkout seguro, com webhook assinado por HMAC e idempotente.",
+        result:
+          "No ar e vendendo, com pagamento real validado, funil de métricas por campanha (Meta Pixel + API de Conversões) e 68 arquivos de teste (unitários, integração e E2E).",
+      },
+      en: {
+        title: "Cadernim Recipes",
+        category: "My own product · Paid PWA",
+        tagline: "A recipe app sold online, from PDF to payment.",
+        problem:
+          "A recipe collection existed only as PDFs: no search, no diet filters and no way to sell it as a digital product.",
+        solution:
+          "A PWA with 1,100+ recipes extracted from the PDFs by an LLM pipeline and reviewed in an admin panel with versioning. It offers search by recipe or ingredient, diet filters, favorites, email-code login and one-time payment via Mercado Pago.",
+        challenge:
+          "Ensuring reliable data from PDFs (batch review validated by schema, plus rule parity between Python and TypeScript) and a secure checkout with an HMAC-signed, idempotent webhook.",
+        result:
+          "Live and selling, with real payments validated, a per-campaign metrics funnel (Meta Pixel + Conversions API) and 68 test files (unit, integration and E2E).",
+      },
+    },
+    {
+      id: "pesquisa",
+      image: "/print-pesquisa.webp",
+      featured: false,
+      tags: ["React", "TypeScript", "Capacitor", "SQLite", "Supabase", "Leaflet"],
+      link: null,
+      github: null,
+      pt: {
+        title: "Plataforma de Pesquisa de Campo",
+        category: "Web + Android · Offline-first",
+        tagline: "Coleta georreferenciada que funciona sem internet.",
+        problem:
+          "Pesquisas de campo dependiam de formulários em papel ou de apps que exigiam conexão, com consolidação manual e pouca visibilidade sobre cobertura e cotas.",
+        solution:
+          "Um único codebase React para o painel do coordenador (web) e o app do entrevistador (Android via Capacitor): questionários, atribuições, entrevistadores com PIN, coleta offline com GPS em SQLite e sincronização quando há sinal. O painel mostra resultados por zona no mapa, séries temporais e comparativos.",
+        challenge:
+          "Sincronizar com segurança os dados coletados offline e medir a cobertura real: point-in-polygon sobre os limites das zonas, margem de erro e cotas por região, além de importar e padronizar a base do sistema legado.",
+        result:
+          "Em produção (web + APK), já usada em coletas de 1.000 entrevistas. Desenvolvi o sistema sozinho, de ponta a ponta.",
+      },
+      en: {
+        title: "Field Survey Platform",
+        category: "Web + Android · Offline-first",
+        tagline: "Geotagged data collection that works without internet.",
+        problem:
+          "Field surveys relied on paper forms or apps that required a connection, with manual consolidation and little visibility into coverage and quotas.",
+        solution:
+          "A single React codebase for the coordinator dashboard (web) and the interviewer app (Android via Capacitor): questionnaires, assignments, PIN-based interviewers, offline GPS-tagged collection in SQLite and sync when there's signal. The dashboard shows results per zone on a map, time series and comparisons.",
+        challenge:
+          "Safely syncing data collected offline and measuring real coverage: point-in-polygon over zone boundaries, margin of error and regional quotas, plus importing and normalizing the legacy system's data.",
+        result:
+          "In production (web + APK), already used for 1,000-interview data collections. I built the whole system end-to-end on my own.",
+      },
+    },
+    {
+      id: "prompthub",
+      image: "/print-prompthub.webp",
+      featured: false,
+      tags: ["Next.js", "TypeScript", "PostgreSQL", "pgvector", "Drizzle", "OpenRouter"],
+      link: null,
+      github: null,
+      pt: {
+        title: "PromptHub",
+        category: "IA · Gestão de prompts para equipes",
+        tagline: "Biblioteca de prompts com busca semântica, versões e permissões.",
+        problem:
+          "Prompts úteis ficavam espalhados em conversas e documentos pessoais, sem versão, sem controle de quem pode ver e sem forma de reaproveitar o que funciona.",
+        solution:
+          "Plataforma web/PWA para guardar, versionar, compartilhar e executar prompts. Tem busca híbrida (texto em português + semântica com pgvector, unidas por Reciprocal Rank Fusion), playground, geração e melhoria de prompts com IA, ditado por voz e coleções.",
+        challenge:
+          "Modelar permissões granulares (papéis admin, manager, member e viewer, mais compartilhamento por usuário ou grupo) com auditoria, analytics e limites de uso por usuário e por organização.",
+        result:
+          "MVP completo em 7 fases, com 131 arquivos de teste (unitários, de integração contra Postgres real e E2E) e deploy em Docker.",
+      },
+      en: {
+        title: "PromptHub",
+        category: "AI · Prompt management for teams",
+        tagline: "A prompt library with semantic search, versions and permissions.",
+        problem:
+          "Useful prompts were scattered across chats and personal docs, with no versioning, no control over who can see them and no way to reuse what works.",
+        solution:
+          "A web/PWA platform to store, version, share and run prompts. It has hybrid search (Portuguese full-text + pgvector semantic search, merged with Reciprocal Rank Fusion), a playground, AI prompt generation and improvement, voice dictation and collections.",
+        challenge:
+          "Modeling granular permissions (admin, manager, member and viewer roles, plus per-user or per-group sharing) with auditing, analytics and usage limits per user and per organization.",
+        result:
+          "A complete MVP built in 7 phases, with 131 test files (unit, integration against a real Postgres and E2E) and Docker deployment.",
+      },
+    },
+    {
+      id: "financeiro",
+      image: "/print-financeiro.webp",
+      featured: false,
+      tags: ["NestJS", "Vue.js", "PostgreSQL", "Prisma", "BullMQ", "LLM"],
+      link: null,
+      github: null,
+      pt: {
+        title: "Sistema Financeiro IA",
+        category: "IA · Finanças pessoais e PJ",
+        tagline: "Lance gastos por texto, áudio ou foto e converse com seus dados.",
+        problem:
+          "Controlar as finanças pessoais, da família e da PJ exigia digitar e categorizar cada lançamento à mão, e as planilhas não respondiam perguntas simples sobre os próprios gastos.",
+        solution:
+          "PWA em Vue 3 com API NestJS: lançamentos por texto, áudio (Whisper) ou foto, importação de extratos OFX/PDF, categorização por IA com regras aprendidas, workspaces separados com convites e um chat que consulta os dados via function calling.",
+        challenge:
+          "Processar a ingestão com IA de forma assíncrona e confiável (filas BullMQ + Redis) num monorepo com tipos compartilhados, mantendo o cadastro fechado por lista de permissão.",
+        result:
+          "Em uso real, com CI no GitHub Actions, 89 arquivos de teste e deploy separado de API, worker e web.",
+      },
+      en: {
+        title: "AI Finance System",
+        category: "AI · Personal & business finance",
+        tagline: "Log expenses by text, voice or photo and chat with your data.",
+        problem:
+          "Managing personal, family and business finances meant typing and categorizing every entry by hand, and spreadsheets couldn't answer simple questions about one's own spending.",
+        solution:
+          "A Vue 3 PWA with a NestJS API: entries by text, voice (Whisper) or photo, OFX/PDF statement import, AI categorization with learned rules, separate workspaces with invites and a chat that queries the data via function calling.",
+        challenge:
+          "Running AI ingestion asynchronously and reliably (BullMQ + Redis queues) in a monorepo with shared types, while keeping sign-up closed behind an allowlist.",
+        result:
+          "In real use, with GitHub Actions CI, 89 test files and separate deployments for API, worker and web.",
+      },
+    },
+    {
+      id: "construsoft",
+      image: "/print-site-construsoft.webp",
+      featured: false,
+      tags: ["Node.js", "NestJS", "Vue.js", "PostgreSQL", "Prisma", "Docker"],
       link: "https://www.construsoft.com.br/",
       github: null,
       pt: {
@@ -73,11 +243,11 @@ export const projects: Project[] = [
     },
     {
       id: "assistenteRag",
-      image: "/print-assistente-rag.png",
-      featured: true,
+      image: "/print-assistente-rag.webp",
+      featured: false,
       tags: ["Python", "RAG", "LangChain", "LLM", "OpenRouter"],
       link: null,
-      github: "https://github.com/staeledson/assistente-rag",
+      github: "https://github.com/staeledson/rag-assistant",
       pt: {
         title: "Assistente RAG",
         category: "IA · RAG sobre Documentos",
@@ -107,7 +277,7 @@ export const projects: Project[] = [
     },
     {
       id: "igep",
-      image: "/print-site-igep.png",
+      image: "/print-site-igep.webp",
       featured: false,
       tags: ["Vue.js", "Tailwind", "API", "SEO"],
       link: "https://www.igepsaude.org.br/",
@@ -137,40 +307,6 @@ export const projects: Project[] = [
           "Delivering a fast, easy-to-navigate platform while keeping SEO best practices in from the ground up.",
         result:
           "A modern, responsive portal delivered end-to-end, with better ranking and navigation.",
-      },
-    },
-    {
-      id: "pluralmed",
-      image: "/print-site-plural.png",
-      featured: false,
-      tags: ["Alpine.js", "Vue.js", "API", "Tailwind"],
-      link: "https://www.pluralmed.com.br/",
-      github: null,
-      pt: {
-        title: "Grupo Pluralmed",
-        category: "Web · Institucional",
-        tagline: "Evolução do site institucional com novas integrações.",
-        problem:
-          "O site institucional do Grupo Pluralmed precisava de mais interatividade e de novas seções dinâmicas.",
-        solution:
-          "Melhorias no site com Alpine.js para interatividade e integrações como uma aba de notícias dinâmica.",
-        challenge:
-          "Adicionar interatividade e novas integrações sem comprometer a leveza e a performance do site existente.",
-        result:
-          "Site mais interativo e dinâmico, com novas seções que mantêm o conteúdo sempre atualizado.",
-      },
-      en: {
-        title: "Grupo Pluralmed",
-        category: "Web · Institutional",
-        tagline: "Evolving the institutional site with new integrations.",
-        problem:
-          "Grupo Pluralmed's institutional site needed more interactivity and new dynamic sections.",
-        solution:
-          "Site improvements with Alpine.js for interactivity and integrations such as a dynamic news section.",
-        challenge:
-          "Adding interactivity and new integrations without compromising the existing site's speed and lightness.",
-        result:
-          "A more interactive, dynamic site with new sections that keep content always up to date.",
       },
     },
   ];
@@ -273,7 +409,7 @@ export const projects: Project[] = [
       kicker: "Em números",
       items: [
         { value: 3, suffix: "+", label: "anos de experiência" },
-        { value: 10, suffix: "+", label: "projetos entregues" },
+        { value: 20, suffix: "+", label: "sistemas e produtos entregues" },
         { value: 25, suffix: "%", label: "mais rápido em módulos críticos" },
         { value: 30, suffix: "%", label: "entregas aceleradas com componentes" },
       ],
@@ -353,27 +489,27 @@ export const projects: Project[] = [
     testimonials: {
       kicker: "Recomendações",
       title: "O que dizem sobre o meu trabalho",
-      note: "Recomendações reais publicadas no LinkedIn por colegas e líderes.",
+      note: "Trechos de recomendações publicadas no LinkedIn por colegas e líderes.",
       items: [
         {
-          quote: "Trabalho com o Stael no Grupo PluralMed há mais de um ano, com entregas reais em sistemas críticos da plataforma Vituz. Atua com PHP/Laravel, Node.js, PostgreSQL e AWS, modelou e otimizou queries complexas e já tem pipelines RAG em produção conectando o sistema a LLMs. Técnica sólida, ritmo de aprendizado acima da média e comunicação clara — o tipo de profissional que qualquer time tech moderno quer no squad. Recomendo fortemente.",
+          quote: "Conheço e trabalho com o Stael no Grupo PluralMed há mais de 1 ano. Construiu com entregas reais em sistemas críticos da Plataforma Vituz […] Construiu integrações com serviços do SUS, modelou e otimizou queries complexas em PostgreSQL, implementou processamento assíncrono com filas e jobs para rotinas críticas. […] já tem em produção pipelines RAG conectando o sistema a APIs de LLMs para automação inteligente de tarefas […] Soma técnica sólida, ritmo de aprendizado acima da média e comunicação clara em decisões técnicas.",
           name: "João Alisson",
-          role: "Technical Lead & AI Architect · supervisor direto",
+          role: "Arquiteto de Software & IA · supervisor direto",
         },
         {
-          quote: "Trabalhei com o Stael em um sistema de gestão em saúde, com integrações governamentais complexas e módulos críticos como atendimento e faturamento. O que mais me marcou foi a confiabilidade: dentro do escopo que assume, entrega — sem surpresas, sem pendências. Atua como full stack com pegada forte em backend, lidando bem com regras de negócio e fluxos sensíveis.",
+          quote: "Tive a oportunidade de trabalhar com o Stael em um sistema de gestão em saúde, um ambiente que envolve integrações com APIs governamentais complexas e módulos críticos como atendimento e faturamento […] O que mais me marcou foi a confiabilidade dele: dentro do escopo que assume, entrega. Sem surpresas, sem pendências. Atua como fullstack, mas com uma pegada mais forte no backend — onde demonstra boa capacidade de lidar com regras de negócio, integrações e fluxos sensíveis.",
           name: "Aristiklever R. Sousa",
-          role: "Senior Software Engineer",
+          role: "Senior Software Engineer · Healthcare Systems",
         },
         {
-          quote: "O Stael tem um olhar técnico muito apurado que faz diferença no ciclo de entrega. Garante que cada requisito esteja claro e testável, antecipa cenários críticos e mantém comunicação transparente. Domina a parte técnica sem perder de vista a qualidade final do produto.",
+          quote: "O Stael possui um olhar técnico muito apurado que faz toda a diferença no ciclo de entrega. […] ele demonstra um cuidado raro em garantir que cada requisito esteja claro e testável. Essa postura facilita imensamente o trabalho de suporte e QA, pois ele antecipa cenários críticos e mantém uma comunicação transparente.",
           name: "João Carlos Figueredo",
-          role: "QA · valida entregas para produção",
+          role: "Desenvolvedor Back-end · mesma equipe",
         },
         {
-          quote: "Trabalhei com o Stael em projetos Full Stack e destaco sua sólida capacidade técnica no backend e no frontend: domínio de APIs, integração de sistemas, boas práticas de versionamento e interfaces performáticas. Profissional comprometido com qualidade de código e entrega eficiente. Recomendo fortemente.",
+          quote: "Tive a oportunidade de trabalhar com o Stael em projetos de desenvolvimento Full Stack e destaco sua sólida capacidade técnica tanto no backend quanto no frontend. Possui domínio no desenvolvimento de APIs, integração de sistemas, boas práticas de versionamento e construção de interfaces performáticas. É um profissional comprometido com qualidade de código, organização e entrega de soluções eficientes.",
           name: "Nicole Fernandes",
-          role: "Desenvolvedora Full Stack Pleno · mesma equipe",
+          role: "Desenvolvedora Full Stack · mesma equipe",
         },
       ],
     },
@@ -433,7 +569,7 @@ export const projects: Project[] = [
       kicker: "By the numbers",
       items: [
         { value: 3, suffix: "+", label: "years of experience" },
-        { value: 10, suffix: "+", label: "projects delivered" },
+        { value: 20, suffix: "+", label: "systems and products shipped" },
         { value: 25, suffix: "%", label: "faster critical modules" },
         { value: 30, suffix: "%", label: "faster delivery with components" },
       ],
@@ -513,27 +649,27 @@ export const projects: Project[] = [
     testimonials: {
       kicker: "Recommendations",
       title: "What people say about my work",
-      note: "Real recommendations published on LinkedIn by colleagues and leads.",
+      note: "Excerpts from recommendations published on LinkedIn by colleagues and leads (translated from Portuguese).",
       items: [
         {
-          quote: "I've worked with Stael at Grupo PluralMed for over a year, with real deliveries on critical systems of the Vituz platform. He works with PHP/Laravel, Node.js, PostgreSQL and AWS, modeled and optimized complex queries, and already has RAG pipelines in production connecting the system to LLMs. Solid skills, above-average learning pace and clear communication — the kind of professional any modern tech team wants on the squad. Highly recommend.",
+          quote: "I've known and worked with Stael at Grupo PluralMed for over a year. He has built real deliveries on critical systems of the Vituz Platform […] He built integrations with SUS (Brazilian public health) services, modeled and optimized complex PostgreSQL queries, and implemented asynchronous processing with queues and jobs for critical routines. […] he already has RAG pipelines in production connecting the system to LLM APIs for intelligent task automation […] Solid technical skills, above-average learning pace and clear communication in technical decisions.",
           name: "João Alisson",
-          role: "Technical Lead & AI Architect · direct supervisor",
+          role: "Software & AI Architect · direct supervisor",
         },
         {
-          quote: "I worked with Stael on a healthcare management system, with complex government integrations and critical modules like care and billing. What stood out most was his reliability: within the scope he takes on, he delivers — no surprises, no loose ends. He works full stack with a strong backend focus, handling business rules and sensitive flows well.",
+          quote: "I had the opportunity to work with Stael on a healthcare management system, an environment involving complex government API integrations and critical modules such as patient care and billing […] What stood out most was his reliability: within the scope he takes on, he delivers. No surprises, no loose ends. He works full stack, but with a stronger backend focus — where he shows a good ability to handle business rules, integrations and sensitive flows.",
           name: "Aristiklever R. Sousa",
-          role: "Senior Software Engineer",
+          role: "Senior Software Engineer · Healthcare Systems",
         },
         {
-          quote: "Stael has a very sharp technical eye that makes a difference in the delivery cycle. He makes sure every requirement is clear and testable, anticipates critical scenarios and keeps communication transparent. He masters the technical side without losing sight of final product quality.",
+          quote: "Stael has a very sharp technical eye that makes all the difference in the delivery cycle. […] he shows rare care in making sure every requirement is clear and testable. This attitude makes support and QA work much easier, as he anticipates critical scenarios and keeps communication transparent.",
           name: "João Carlos Figueredo",
-          role: "QA · gatekeeper of production releases",
+          role: "Back-end Developer · same team",
         },
         {
-          quote: "I worked with Stael on Full Stack projects and highlight his solid technical ability on both backend and frontend: command of APIs, system integration, good versioning practices and performant interfaces. A professional committed to code quality and efficient delivery. Highly recommend.",
+          quote: "I had the opportunity to work with Stael on Full Stack development projects, and I highlight his solid technical ability on both backend and frontend. He masters API development, system integration, good versioning practices and building performant interfaces. A professional committed to code quality, organization and delivering efficient solutions.",
           name: "Nicole Fernandes",
-          role: "Mid-level Full Stack Developer · same team",
+          role: "Full Stack Developer · same team",
         },
       ],
     },
