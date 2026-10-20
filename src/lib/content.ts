@@ -12,12 +12,12 @@ export const projects: Project[] = [
       github: null,
       pt: {
         title: "Vituz",
-        category: "SaaS · Saúde Pública",
+        category: "SaaS · Gestão em Saúde",
         tagline: "Plataforma que centraliza toda a gestão da saúde municipal.",
         problem:
           "Redes municipais de saúde gerenciavam escalas médicas, emergência, atenção primária, regulação, painel de chamadas e faturamento em sistemas fragmentados e processos manuais.",
         solution:
-          "SaaS unificado que centraliza todos os módulos da saúde pública municipal em uma única plataforma, da escala médica ao faturamento.",
+          "SaaS unificado que centraliza todos os módulos da gestão de saúde municipal em uma única plataforma, da escala médica ao faturamento.",
         challenge:
           "Modelar regras de negócio complexas de múltiplos setores da saúde mantendo performance e estabilidade em uso real por redes municipais inteiras.",
         result:
@@ -25,12 +25,12 @@ export const projects: Project[] = [
       },
       en: {
         title: "Vituz",
-        category: "SaaS · Public Health",
+        category: "SaaS · Healthcare Management",
         tagline: "A platform that centralizes municipal healthcare management.",
         problem:
           "Municipal health networks managed medical scheduling, emergency, primary care, regulation, call panels and billing across fragmented systems and manual processes.",
         solution:
-          "A unified SaaS that centralizes every module of municipal public health in a single platform — from medical scheduling to billing.",
+          "A unified SaaS that centralizes every module of municipal healthcare management in a single platform — from medical scheduling to billing.",
         challenge:
           "Modeling complex business rules across multiple healthcare sectors while keeping performance and stability under real use by entire municipal networks.",
         result:
@@ -399,7 +399,7 @@ export const projects: Project[] = [
     about: {
       kicker: "Sobre mim",
       title: "Engenharia que resolve problemas reais de negócio.",
-      p1: "Sou o Stael Edson, desenvolvedor Full Stack com 3,5+ anos construindo sistemas em produção para a saúde pública. Hoje atuo como dono técnico de produtos internos, do requisito ao deploy.",
+      p1: "Sou o Stael Edson, desenvolvedor Full Stack com 3,5+ anos construindo sistemas de gestão em saúde em produção. Hoje atuo como dono técnico de produtos internos, do requisito ao deploy.",
       p2: "Trabalho do banco de dados à interface: modelo regras de negócio complexas em PostgreSQL e Supabase, escrevo back-ends em Laravel, Node.js e NestJS e construo interfaces em Vue.js, React e Next.js com TypeScript, sempre de olho em performance, segurança e manutenção.",
       p3: "Em 2026 lancei, como autor principal, uma intranet corporativa e uma plataforma de pesquisa de campo que funciona offline (web + Android). Também coloquei no mercado um produto próprio: um app de receitas com gateway de pagamento integrado. Uso IA em produção em triagem com LLM, extração de dados de PDFs, busca semântica e servidores MCP, e já reduzi em 25% o tempo de resposta de módulos críticos.",
       p4: "Atendo projetos freelance e contratos PJ por demanda, em paralelo ao meu trabalho atual, com escopo e prazos combinados. Se você precisa tirar um sistema do papel ou evoluir um que já existe, vamos conversar.",
@@ -432,7 +432,7 @@ export const projects: Project[] = [
           location: "Sobral, CE · Híbrido",
           period: "fev 2025 — Atual",
           summary:
-            "Dono técnico de sistemas internos e evolução de produtos de saúde pública, do requisito ao deploy.",
+            "Dono técnico de sistemas internos e evolução de produtos de gestão em saúde, do requisito ao deploy.",
           bullets: [
             "Autor principal de uma intranet corporativa que reúne processos e indicadores de 20 áreas e digitalizou a gestão de talentos (DISC, 9-Box, avaliação 360).",
             "Criei uma plataforma de pesquisa de campo offline-first (web + Android), já usada em coletas de 1.000 entrevistas.",
@@ -577,7 +577,7 @@ export const projects: Project[] = [
     about: {
       kicker: "About me",
       title: "Engineering that solves real business problems.",
-      p1: "I'm Stael Edson, a Full Stack developer with 3.5+ years building production systems for public healthcare. Today I'm the technical owner of internal products, from requirements to deployment.",
+      p1: "I'm Stael Edson, a Full Stack developer with 3.5+ years building healthcare management systems in production. Today I'm the technical owner of internal products, from requirements to deployment.",
       p2: "I work from the database to the interface: I model complex business rules in PostgreSQL and Supabase, write back-ends in Laravel, Node.js and NestJS, and build interfaces in Vue.js, React and Next.js with TypeScript — always with an eye on performance, security and maintainability.",
       p3: "In 2026 I shipped, as main author, a corporate intranet and a field-survey platform that works offline (web + Android). I also launched a product of my own: a recipe app with an integrated payment gateway. I use AI in production for LLM-based screening, PDF data extraction, semantic search and MCP servers, and I've cut the response time of critical modules by 25%.",
       p4: "I take on freelance projects and on-demand contracts alongside my current job, with agreed scope and timelines. If you need to get a system off the ground or evolve an existing one, let's talk.",
@@ -610,7 +610,7 @@ export const projects: Project[] = [
           location: "Sobral, BR · Hybrid",
           period: "Feb 2025 — Present",
           summary:
-            "Technical owner of internal systems and of the evolution of public-health products, from requirements to deployment.",
+            "Technical owner of internal systems and of the evolution of healthcare management products, from requirements to deployment.",
           bullets: [
             "Main author of a corporate intranet that brings together processes and KPIs for 20 departments and digitized talent management (DISC, 9-Box, 360 feedback).",
             "Built an offline-first field-survey platform (web + Android), already used for 1,000-interview data collections.",
