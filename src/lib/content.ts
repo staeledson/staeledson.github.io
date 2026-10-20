@@ -80,27 +80,27 @@ export const projects: Project[] = [
       github: null,
       pt: {
         title: "Cadernim de Receitas",
-        category: "Produto próprio · PWA pago",
+        category: "Produto próprio · App por assinatura",
         tagline: "App de receitas vendido online, do PDF ao pagamento.",
         problem:
           "Uma coleção de receitas existia só em PDFs: sem busca, sem filtros por dieta e sem forma de ser vendida como produto digital.",
         solution:
-          "PWA com 1.100+ receitas extraídas dos PDFs por um pipeline com LLM e revisadas no painel admin com versionamento. Tem busca por receita ou ingrediente, filtros por dieta, favoritos, login por código enviado ao e-mail e venda por pagamento único no Mercado Pago.",
+          "PWA com 1.100+ receitas extraídas dos PDFs por um pipeline com LLM e revisadas no painel admin com versionamento. Tem busca por receita ou ingrediente, filtros por dieta, favoritos, login por código enviado ao e-mail e gateway de pagamento integrado (Mercado Pago) com planos mensal, anual e vitalício.",
         challenge:
-          "Garantir dados confiáveis vindos de PDFs (revisão em lote validada por formato e paridade de regras entre Python e TypeScript) e um checkout seguro, com webhook assinado por HMAC e idempotente.",
+          "Garantir dados confiáveis vindos de PDFs (revisão em lote validada por formato e paridade de regras entre Python e TypeScript) e um checkout seguro: assinatura recorrente nos planos mensal e anual, pagamento único no vitalício e webhook assinado por HMAC e idempotente.",
         result:
           "No ar e vendendo, com pagamento real validado, funil de métricas por campanha (Meta Pixel + API de Conversões) e 68 arquivos de teste (unitários, integração e E2E).",
       },
       en: {
         title: "Cadernim Recipes",
-        category: "My own product · Paid PWA",
+        category: "My own product · Subscription app",
         tagline: "A recipe app sold online, from PDF to payment.",
         problem:
           "A recipe collection existed only as PDFs: no search, no diet filters and no way to sell it as a digital product.",
         solution:
-          "A PWA with 1,100+ recipes extracted from the PDFs by an LLM pipeline and reviewed in an admin panel with versioning. It offers search by recipe or ingredient, diet filters, favorites, email-code login and one-time payment via Mercado Pago.",
+          "A PWA with 1,100+ recipes extracted from the PDFs by an LLM pipeline and reviewed in an admin panel with versioning. It offers search by recipe or ingredient, diet filters, favorites, email-code login and an integrated payment gateway (Mercado Pago) with monthly, yearly and lifetime plans.",
         challenge:
-          "Ensuring reliable data from PDFs (batch review validated by schema, plus rule parity between Python and TypeScript) and a secure checkout with an HMAC-signed, idempotent webhook.",
+          "Ensuring reliable data from PDFs (batch review validated by schema, plus rule parity between Python and TypeScript) and a secure checkout: recurring billing for the monthly and yearly plans, a one-time payment for lifetime access and an HMAC-signed, idempotent webhook.",
         result:
           "Live and selling, with real payments validated, a per-campaign metrics funnel (Meta Pixel + Conversions API) and 68 test files (unit, integration and E2E).",
       },
