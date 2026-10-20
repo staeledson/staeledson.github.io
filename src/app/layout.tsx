@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Space_Grotesk, Manrope, JetBrains_Mono } from "next/font/google";
 import { LangProvider } from "@/context/LangContext";
+import Analytics from "@/components/Analytics";
 import "./globals.css";
 
 const spaceGrotesk = Space_Grotesk({
@@ -92,6 +93,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body>
         <LangProvider>{children}</LangProvider>
+        <Analytics />
       </body>
     </html>
   );
