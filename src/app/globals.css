@@ -351,3 +351,19 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   .avatar-badge--1 { left: -4%; }
   .avatar-badge--2 { right: -2%; }
 }
+
+/* ---------- Offer (AI prototype → production) ---------- */
+.offer { padding-top: clamp(40px, 6vw, 72px); }
+.offer-card { position: relative; display: grid; grid-template-columns: 1.15fr 1fr; gap: clamp(28px, 4vw, 56px); align-items: center;
+  padding: clamp(28px, 4.5vw, 56px); border-radius: var(--r-lg); border: 1px solid rgba(var(--accent-rgb), .38);
+  background: radial-gradient(120% 140% at 0% 0%, rgba(var(--accent-rgb), .18), transparent 55%), var(--surface);
+  box-shadow: 0 30px 80px -40px rgba(var(--accent-rgb), .55); }
+.offer-title { font-family: var(--font-display); font-weight: 700; font-size: clamp(28px, 4vw, 44px); line-height: 1.1; letter-spacing: -.02em; margin: 16px 0 14px; }
+.offer-sub { color: var(--text-muted); font-size: 17px; max-width: 560px; }
+.offer-proof { margin-top: 14px; font-size: 14.5px; color: var(--accent-2); font-weight: 500; }
+.offer-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 26px; }
+.offer-list { list-style: none; display: grid; gap: 12px; }
+.offer-list li { display: flex; gap: 12px; align-items: flex-start; padding: 14px 16px; border: 1px solid var(--border); border-radius: var(--r); background: rgba(10,10,15,.45); font-size: 15px; color: var(--text); }
+.offer-check { flex-shrink: 0; display: grid; place-items: center; width: 24px; height: 24px; border-radius: 7px; background: rgba(var(--accent-rgb), .16); color: var(--accent-2); }
+@media (max-width: 900px) { .offer-card { grid-template-columns: 1fr; } }
+@media (max-width: 520px) { .offer-actions .btn { width: 100%; justify-content: center; } }

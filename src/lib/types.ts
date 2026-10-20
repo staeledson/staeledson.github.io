@@ -39,6 +39,10 @@ export interface Dictionary {
     viewCase: string; live: string; code: string;
     labels: { problem: string; solution: string; challenge: string; result: string; stack: string };
   };
+  offer: {
+    kicker: string; title: string; sub: string; items: string[]; proof: string;
+    cta: string; ctaProjects: string; message: string;
+  };
   diff: { kicker: string; title: string; items: DiffItem[] };
   testimonials: { kicker: string; title: string; note: string; items: Testimonial[] };
   contact: {
