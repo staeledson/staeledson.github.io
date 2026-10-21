@@ -2,6 +2,7 @@
 
 import { useLang } from "@/context/LangContext";
 import { links } from "@/lib/content";
+import { track } from "@/lib/analytics";
 import { IconArrowUp, IconGithub, IconLinkedin, IconMail, IconWhatsapp } from "./icons";
 
 export default function Footer() {
@@ -20,7 +21,7 @@ export default function Footer() {
         <div className="footer-links">
           <a href={links.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub"><IconGithub size={20} /></a>
           <a href={links.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><IconLinkedin size={20} /></a>
-          <a href={links.whatsapp} target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><IconWhatsapp size={20} /></a>
+          <a href={links.whatsapp} target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" onClick={() => track("whatsapp-rodape", "WhatsApp: rodapé")}><IconWhatsapp size={20} /></a>
           <a href={`mailto:${links.email}`} aria-label="E-mail"><IconMail size={20} /></a>
         </div>
         <a href="#top" className="footer-top" onClick={top}>{t.footer.top}<IconArrowUp size={16} /></a>

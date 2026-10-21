@@ -46,8 +46,8 @@ export default function Hero() {
             <a className="btn btn--ghost" href={links.github} target="_blank" rel="noopener noreferrer">
               <IconGithub size={18} />{t.hero.ctaGithub}
             </a>
-            {/* "Baixar CV" oculto até o PDF ficar pronto. Reative com:
-            <a className="btn btn--ghost" href={links.cv} download>
+            {/* "Baixar CV" oculto até o PDF ficar pronto. Reative com (importando IconDownload e track de "@/lib/analytics"):
+            <a className="btn btn--ghost" href={links.cv} download onClick={() => track("cv-download", "Baixou o CV")}>
               <IconDownload size={18} />{t.hero.ctaCv}
             </a> */}
           </div>

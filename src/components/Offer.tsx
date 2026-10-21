@@ -2,6 +2,7 @@
 
 import { useLang } from "@/context/LangContext";
 import { links } from "@/lib/content";
+import { track } from "@/lib/analytics";
 import Reveal from "./ui/Reveal";
 import { IconArrow, IconCheck, IconWhatsapp } from "./icons";
 
@@ -21,7 +22,7 @@ export default function Offer() {
             <p className="offer-sub">{o.sub}</p>
             <p className="offer-proof">{o.proof}</p>
             <div className="offer-actions">
-              <a className="btn btn--solid btn--lg" href={href} target="_blank" rel="noopener noreferrer">
+              <a className="btn btn--solid btn--lg" href={href} target="_blank" rel="noopener noreferrer" onClick={() => track("whatsapp-oferta", "WhatsApp: oferta (sistema feito com IA)")}>
                 <IconWhatsapp size={18} />{o.cta}
               </a>
               <a className="btn btn--ghost btn--lg" href="#projects">

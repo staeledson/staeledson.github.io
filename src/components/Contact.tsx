@@ -2,6 +2,7 @@
 
 import { useLang } from "@/context/LangContext";
 import { links } from "@/lib/content";
+import { track } from "@/lib/analytics";
 import SectionHead from "./ui/SectionHead";
 import { IconArrowUpRight, IconGithub, IconLinkedin, IconMail, IconWhatsapp } from "./icons";
 
@@ -13,7 +14,7 @@ export default function Contact() {
   const quoteHref = `${links.whatsapp}?text=${encodeURIComponent(quoteText)}`;
   const cards = [
     { k: t.contact.email, v: links.email, href: `mailto:${links.email}`, icon: <IconMail size={20} />, ext: false },
-    { k: t.contact.whatsapp, v: links.whatsappLabel, href: links.whatsapp, icon: <IconWhatsapp size={20} />, ext: true },
+    { k: t.contact.whatsapp, v: links.whatsappLabel, href: links.whatsapp, icon: <IconWhatsapp size={20} />, ext: true, ev: "whatsapp-contato" },
     { k: t.contact.linkedin, v: "in/staeledson", href: links.linkedin, icon: <IconLinkedin size={20} />, ext: true },
     { k: t.contact.github, v: "@staeledson", href: links.github, icon: <IconGithub size={20} />, ext: true },
   ];
@@ -29,6 +30,7 @@ export default function Contact() {
               key={cd.k}
               href={cd.href}
               {...(cd.ext ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+              onClick={() => { if (cd.ev) track(cd.ev, "WhatsApp: cartão de contato"); }}
             >
               <span className="contact-ico">{cd.icon}</span>
               <span className="contact-meta">
@@ -40,7 +42,7 @@ export default function Contact() {
           ))}
         </div>
         <div className="contact-cta">
-          <a className="btn btn--solid btn--lg" href={quoteHref} target="_blank" rel="noopener noreferrer">
+          <a className="btn btn--solid btn--lg" href={quoteHref} target="_blank" rel="noopener noreferrer" onClick={() => track("whatsapp-orcamento", "WhatsApp: pedir orçamento")}>
             <IconWhatsapp size={18} />{t.contact.cta}
           </a>
           <span className="contact-avail"><span className="avail-dot" aria-hidden="true" />{t.contact.availability}</span>
