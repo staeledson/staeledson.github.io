@@ -5,6 +5,7 @@ import Image from "next/image";
 import { useLang } from "@/context/LangContext";
 import { projects as allProjects } from "@/lib/content";
 import type { Project } from "@/lib/types";
+import { track } from "@/lib/analytics";
 import Reveal from "./ui/Reveal";
 import SectionHead from "./ui/SectionHead";
 import ProjectModal from "./ProjectModal";
@@ -30,12 +31,12 @@ function ProjectCard({ p, onOpen, large }: { p: Project; onOpen: (p: Project) =>
         <div className="pcard-links">
           <button className="link-btn" onClick={() => onOpen(p)}>{t.projects.viewCase}<IconArrow size={16} /></button>
           {p.link ? (
-            <a className="link-btn link-btn--ghost" href={p.link} target="_blank" rel="noopener noreferrer">
+            <a className="link-btn link-btn--ghost" href={p.link} target="_blank" rel="noopener noreferrer" onClick={() => track(`projeto-${p.id}-demo`, `Demo: ${p.pt.title}`)}>
               <IconExternal size={15} />{t.projects.live}
             </a>
           ) : null}
           {p.github ? (
-            <a className="link-btn link-btn--ghost" href={p.github} target="_blank" rel="noopener noreferrer">
+            <a className="link-btn link-btn--ghost" href={p.github} target="_blank" rel="noopener noreferrer" onClick={() => track(`projeto-${p.id}-github`, `GitHub: ${p.pt.title}`)}>
               <IconGithub size={15} />{t.projects.code}
             </a>
           ) : null}
@@ -50,16 +51,20 @@ export default function Projects() {
   const [active, setActive] = useState<Project | null>(null);
   const featured = allProjects.filter((p) => p.featured);
   const rest = allProjects.filter((p) => !p.featured);
+  const open = (p: Project) => {
+    track(`projeto-${p.id}`, `Estudo de caso: ${p.pt.title}`);
+    setActive(p);
+  };
 
   return (
     <section className="section projects" id="projects" aria-labelledby="proj-title">
       <div className="container">
         <SectionHead kicker={t.projects.kicker} title={t.projects.title} sub={t.projects.sub} id="proj-title" />
         <div className="pgrid pgrid--featured">
-          {featured.map((p) => <ProjectCard key={p.id} p={p} onOpen={setActive} large />)}
+          {featured.map((p) => <ProjectCard key={p.id} p={p} onOpen={open} large />)}
         </div>
         <div className="pgrid pgrid--rest">
-          {rest.map((p) => <ProjectCard key={p.id} p={p} onOpen={setActive} />)}
+          {rest.map((p) => <ProjectCard key={p.id} p={p} onOpen={open} />)}
         </div>
       </div>
       {active ? <ProjectModal project={active} onClose={() => setActive(null)} /> : null}

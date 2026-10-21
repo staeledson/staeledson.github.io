@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import Image from "next/image";
 import { useLang } from "@/context/LangContext";
 import type { Project } from "@/lib/types";
+import { track } from "@/lib/analytics";
 import { IconClose, IconExternal, IconGithub } from "./icons";
 
 export default function ProjectModal({ project, onClose }: { project: Project; onClose: () => void }) {
@@ -51,12 +52,12 @@ export default function ProjectModal({ project, onClose }: { project: Project; o
             </div>
             <div className="modal-actions">
               {project.link ? (
-                <a className="btn btn--solid btn--sm" href={project.link} target="_blank" rel="noopener noreferrer">
+                <a className="btn btn--solid btn--sm" href={project.link} target="_blank" rel="noopener noreferrer" onClick={() => track(`projeto-${project.id}-demo`, `Demo: ${project.pt.title}`)}>
                   <IconExternal size={16} />{t.projects.live}
                 </a>
               ) : null}
               {project.github ? (
-                <a className="btn btn--ghost btn--sm" href={project.github} target="_blank" rel="noopener noreferrer">
+                <a className="btn btn--ghost btn--sm" href={project.github} target="_blank" rel="noopener noreferrer" onClick={() => track(`projeto-${project.id}-github`, `GitHub: ${project.pt.title}`)}>
                   <IconGithub size={16} />{t.projects.code}
                 </a>
               ) : null}
