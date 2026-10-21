@@ -730,7 +730,7 @@ export const projects: Project[] = [
 export const content: Record<Lang, Dictionary> = { pt, en };
 
 export const links = {
-    email: "edsonstael@gmail.com",
+    email: "stael.edson.dev@gmail.com",
     linkedin: "https://www.linkedin.com/in/staeledson/",
     github: "https://github.com/staeledson",
     whatsapp: "https://wa.me/5585992641804",
